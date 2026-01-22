@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Environment files (CRITICAL!)
+.env
+.env.*
+
+# Debug logs
+npm-debug.log*
+*.log
+
+# Uploads (if any local uploads)
+uploads/

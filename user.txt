@@ -1,0 +1,1113 @@
+User Account Dashboard Redesign - Project Report
+Executive Summary
+This comprehensive redesign transforms the Artisio user dashboard from a cluttered, unprofessional interface into a sophisticated, user-centric experience that reflects the brand's artisanal craftsmanship. The new design prioritizes visual hierarchy, intuitive navigation, premium aesthetics, and delightful micro-interactions.
+
+Current State Analysis
+Critical Issues Identified
+1. Visual Hierarchy Problems:
+
+Competing focal points with no clear primary action
+Statistics cards lack visual breathing room
+Typography hierarchy is weak and inconsistent
+Gold accent color overused, diminishing its impact
+
+2. Layout & Spacing Issues:
+
+Header section feels cramped (insufficient padding)
+Statistics cards have inconsistent spacing (gaps appear random)
+Quick actions section lacks visual distinction from content above
+Recent orders section has poor visual separation
+Footer content is cluttered and hard to scan
+
+3. User Experience Flaws:
+
+Navigation tabs use inconsistent badge styling
+"Discover New Products" CTA feels forced and poorly positioned
+Loyalty points notification is visually disconnected
+No clear visual progression through the page
+Missing personalization depth
+Poor mobile responsiveness indicators
+
+4. Branding & Aesthetics:
+
+Design doesn't reflect "artisanal" brand values
+Colors feel dated (dark teal header lacks sophistication)
+No use of imagery to reinforce brand story
+Iconography is generic and flat
+Missing premium feel expected from artisan marketplace
+
+
+Redesign Strategy
+Design Principles
+
+Crafted Elegance: Every element should feel handcrafted and intentional
+Breathing Space: Generous whitespace reflects premium positioning
+Subtle Motion: Animations enhance without distracting
+Intuitive Flow: Natural eye movement from hero to actions to content
+Personal Connection: Design should feel personal to Sarah
+
+
+Detailed Redesign Specifications
+1. HEADER & NAVIGATION
+Top Navigation Bar
+Background:
+
+Gradient: linear-gradient(135deg, #1a3a3a 0%, #2d5555 100%)
+Height: 80px (increased from ~60px)
+Box shadow: 0 2px 20px rgba(0,0,0,0.08)
+
+Logo:
+
+Font: Playfair Display, 28px, letter-spacing: 3px
+Color: #f8f6f0 (warm white)
+Position: Left aligned with 48px margin
+
+Navigation Items:
+
+Font: Inter, 15px, weight: 500
+Color: rgba(248,246,240,0.85)
+Hover state:
+
+Color: #d4af37 (gold)
+Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+Underline animation from center: 2px height, 0.3s ease-out
+
+
+
+Utility Icons (Search, Wishlist, Profile, Cart):
+
+Size: 22px
+Color: rgba(248,246,240,0.85)
+Spacing: 24px between icons
+Hover: Scale 1.1, color #d4af37
+Transition: transform 0.2s ease-out
+
+
+2. HERO SECTION (Welcome Back Area)
+Container Specifications
+Dimensions:
+
+Height: 420px (increased from ~300px)
+Padding: 80px 120px
+Background: Multi-layer gradient
+
+Base: linear-gradient(135deg, #2a4a5a 0%, #1e3a4a 100%)
+Overlay: radial-gradient(circle at 20% 50%, rgba(212,175,55,0.1) 0%, transparent 50%)
+
+
+
+Pattern Overlay:
+
+Subtle geometric pattern (artisan texture)
+Opacity: 0.03
+SVG pattern with 60px repeat
+
+Profile Section (Left Side)
+Profile Image:
+
+Size: 120px × 120px (increased from ~100px)
+Border: 4px solid rgba(212,175,55,0.3)
+Box shadow: 0 8px 32px rgba(0,0,0,0.2)
+Border radius: 50%
+Position: Relative, z-index: 2
+Online indicator:
+
+Size: 20px
+Border: 3px solid #2a4a5a
+Bottom-right position: -4px, -4px
+Pulse animation: Scale 1 to 1.1, 2s infinite
+
+
+
+Animation:
+javascript// Framer Motion
+initial: { scale: 0, opacity: 0 }
+animate: { scale: 1, opacity: 1 }
+transition: { 
+  type: "spring", 
+  stiffness: 200, 
+  damping: 20, 
+  delay: 0.1 
+}
+"WELCOME BACK" Label:
+
+Font: Inter, 11px, uppercase, letter-spacing: 2.5px
+Color: rgba(212,175,55,0.7)
+Margin-bottom: 12px
+Weight: 600
+
+Animation:
+javascriptinitial: { x: -20, opacity: 0 }
+animate: { x: 0, opacity: 1 }
+transition: { duration: 0.6, delay: 0.2 }
+Name "Sarah Johnson":
+
+Font: Playfair Display, 48px, weight: 600
+Color: #f8f6f0
+Line height: 1.2
+Margin-bottom: 8px
+
+Animation:
+javascriptinitial: { y: 20, opacity: 0 }
+animate: { y: 0, opacity: 1 }
+transition: { duration: 0.6, delay: 0.3 }
+Member Since Text:
+
+Font: Inter, 15px, weight: 400
+Color: rgba(248,246,240,0.6)
+Margin-bottom: 0
+
+Animation:
+javascriptinitial: { y: 20, opacity: 0 }
+animate: { y: 0, opacity: 1 }
+transition: { duration: 0.6, delay: 0.4 }
+Statistics Section (Right Side)
+Container:
+
+Display: Flex, gap: 48px
+Align-items: flex-end
+Text-align: right
+
+Each Stat Item:
+Number (24, 1,240, Gold):
+
+Font: Playfair Display
+Size: 64px for orders/points, 56px for tier
+Weight: 600
+Color:
+
+Orders: #f8f6f0
+Points: #d4af37
+Tier: #d4af37
+
+
+Line height: 1
+Margin-bottom: 8px
+
+Label (ORDERS, POINTS, TIER):
+
+Font: Inter, 12px, uppercase
+Letter-spacing: 2px
+Color: rgba(248,246,240,0.5)
+Weight: 500
+
+Stat Card Animation:
+javascript// Staggered entrance
+initial: { y: 30, opacity: 0 }
+animate: { y: 0, opacity: 1 }
+transition: { 
+  duration: 0.7, 
+  delay: 0.5 + (index * 0.1),
+  ease: [0.25, 0.46, 0.45, 0.94]
+}
+
+// Hover effect
+whileHover: { 
+  y: -8, 
+  transition: { duration: 0.3 } 
+}
+Decorative Element:
+
+Subtle gold line beneath tier
+Width: 60px, height: 2px
+Background: linear-gradient(90deg, transparent, #d4af37, transparent)
+Opacity: 0.5
+
+
+3. DASHBOARD NAVIGATION TABS
+Container
+Specifications:
+
+Background: #ffffff
+Border-bottom: 1px solid rgba(0,0,0,0.06)
+Padding: 0 120px
+Sticky position: top: 80px, z-index: 10
+Backdrop blur: 20px on scroll
+Box shadow (on scroll): 0 4px 24px rgba(0,0,0,0.04)
+
+Tab Items
+Spacing:
+
+Gap between tabs: 48px
+Padding vertical: 24px
+First tab margin-left: 0
+
+Typography:
+
+Font: Inter, 15px, weight: 500
+Color (inactive): #4a5568
+Color (active): #1a3a3a
+Letter-spacing: 0.3px
+
+Badge (for counts like "3" on Orders):
+
+Size: 24px × 24px
+Border-radius: 12px
+Background: #d4af37
+Color: #1a3a3a
+Font: Inter, 12px, weight: 600
+Margin-left: 8px
+Display: inline-flex, align center
+
+Active State Indicator:
+
+Bottom border: 3px solid #d4af37
+Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+Animation: Slide in from left
+
+Hover State:
+
+Color: #2a4a5a
+Transform: translateY(-2px)
+Transition duration: 0.2s
+
+Tab Animation:
+javascript// Active indicator
+initial: { scaleX: 0, opacity: 0 }
+animate: { scaleX: 1, opacity: 1 }
+transition: { duration: 0.4, ease: "easeOut" }
+
+// Tab hover
+whileHover: { y: -2 }
+
+4. MAIN CONTENT AREA
+Overall Container
+
+Max-width: 1440px
+Margin: 0 auto
+Padding: 64px 120px 120px
+Background: linear-gradient(180deg, #fafaf8 0%, #ffffff 100%)
+
+
+5. STATISTICS CARDS SECTION
+Section Header
+"Your Activity" Title:
+
+Font: Playfair Display, 32px, weight: 600
+Color: #1a3a3a
+Margin-bottom: 32px
+Letter-spacing: -0.5px
+
+Animation:
+javascriptinitial: { opacity: 0, y: 20 }
+animate: { opacity: 1, y: 0 }
+transition: { duration: 0.6 }
+Cards Grid
+Layout:
+
+Display: Grid
+Columns: repeat(4, 1fr)
+Gap: 24px
+Margin-bottom: 80px
+
+Individual Card Specifications
+Container:
+
+Background: #ffffff
+Border-radius: 20px
+Padding: 32px
+Border: 1px solid rgba(0,0,0,0.04)
+Box shadow: 0 4px 24px rgba(0,0,0,0.04)
+Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+Cursor: pointer
+
+Icon Container:
+
+Size: 56px × 56px
+Border-radius: 16px
+Margin-bottom: 24px
+Display: flex, center content
+Background colors:
+
+Orders: rgba(147,197,253,0.15) (blue)
+Wishlist: rgba(251,207,232,0.15) (pink)
+Points: rgba(254,215,170,0.15) (orange)
+Spent: rgba(167,243,208,0.15) (green)
+
+
+
+Icon:
+
+Size: 28px
+Stroke-width: 2
+Colors match container theme
+Transition: transform 0.3s ease
+
+Label Text:
+
+Font: Inter, 13px, weight: 500
+Color: #6b7280
+Text-transform: uppercase
+Letter-spacing: 1px
+Margin-bottom: 12px
+
+Main Value:
+
+Font: Playfair Display
+Size: 36px (numbers), 32px (currency)
+Weight: 600
+Color: #1a3a3a
+Line-height: 1.2
+Margin-bottom: 12px
+
+Secondary Text ("+3 this month", etc.):
+
+Font: Inter, 13px, weight: 400
+Color:
+
+Positive changes: #10b981 (green)
+Neutral info: #6b7280 (gray)
+Warnings: #f59e0b (amber)
+
+
+Display: flex with icon
+
+Card Animations:
+javascript// Entrance (staggered)
+initial: { opacity: 0, y: 40, scale: 0.95 }
+animate: { opacity: 1, y: 0, scale: 1 }
+transition: { 
+  duration: 0.6, 
+  delay: index * 0.1,
+  ease: [0.25, 0.46, 0.45, 0.94]
+}
+
+// Hover state
+whileHover: { 
+  y: -8,
+  boxShadow: "0 12px 48px rgba(0,0,0,0.08)",
+  borderColor: "rgba(212,175,55,0.2)"
+}
+
+// Icon rotation on hover
+icon: {
+  whileHover: { rotate: 8, scale: 1.1 }
+}
+Special Styling for Points Card:
+
+Border: 2px solid rgba(212,175,55,0.2)
+Background: linear-gradient(135deg, #ffffff 0%, rgba(254,215,170,0.05) 100%)
+Icon: Sparkle effect animation
+
+
+6. QUICK ACTIONS SECTION
+Section Container
+
+Margin-bottom: 80px
+Padding: 48px
+Background: linear-gradient(135deg, #f8f6f0 0%, #ffffff 100%)
+Border-radius: 24px
+Border: 1px solid rgba(212,175,55,0.1)
+
+Section Header
+"Quick Actions" Title:
+
+Font: Playfair Display, 28px, weight: 600
+Color: #1a3a3a
+Margin-bottom: 32px
+
+Actions Grid
+Layout:
+
+Display: Grid
+Columns: repeat(4, 1fr)
+Gap: 20px
+
+Action Card
+Container:
+
+Background: #ffffff
+Border-radius: 16px
+Padding: 28px 24px
+Text-align: center
+Border: 1px solid rgba(0,0,0,0.05)
+Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+Cursor: pointer
+
+Icon Container:
+
+Size: 64px × 64px
+Border-radius: 50%
+Margin: 0 auto 20px
+Display: flex, center content
+Background:
+
+Default: rgba(42,74,90,0.08)
+Shop Again: #d4af37 (highlighted)
+
+
+Transition: all 0.3s ease
+
+Icon:
+
+Size: 30px
+Color: #2a4a5a (Shop Again: #1a3a3a)
+Stroke-width: 2
+
+Action Title:
+
+Font: Inter, 16px, weight: 600
+Color: #1a3a3a
+Margin-bottom: 8px
+
+Action Description:
+
+Font: Inter, 13px, weight: 400
+Color: #6b7280
+Line-height: 1.5
+
+Animations:
+javascript// Entrance
+initial: { opacity: 0, scale: 0.9 }
+animate: { opacity: 1, scale: 1 }
+transition: { 
+  duration: 0.5, 
+  delay: 0.8 + (index * 0.08) 
+}
+
+// Hover
+whileHover: { 
+  y: -6,
+  boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+  borderColor: "rgba(212,175,55,0.3)"
+}
+whileTap: { scale: 0.97 }
+
+// Icon hover
+iconContainer: {
+  whileHover: { 
+    scale: 1.1,
+    rotate: 5,
+    background: "rgba(212,175,55,0.15)"
+  }
+}
+
+7. RECENT ORDERS SECTION
+Section Header
+Container:
+
+Display: Flex, justify-between, align-center
+Margin-bottom: 32px
+
+"Recent Orders" Title:
+
+Font: Playfair Display, 28px, weight: 600
+Color: #1a3a3a
+
+"View All" Link:
+
+Font: Inter, 15px, weight: 500
+Color: #2a4a5a
+Display: flex with arrow icon
+Gap: 8px
+Transition: all 0.3s
+Hover: color #d4af37, translateX(4px)
+
+Orders List Container
+
+Background: #ffffff
+Border-radius: 20px
+Padding: 32px
+Border: 1px solid rgba(0,0,0,0.04)
+Box-shadow: 0 4px 24px rgba(0,0,0,0.04)
+
+Individual Order Card
+Container:
+
+Padding: 28px 0
+Border-bottom: 1px solid rgba(0,0,0,0.06)
+Display: Grid
+Grid-template-columns: 80px 1fr auto auto
+Gap: 24px
+Align-items: center
+Transition: background 0.3s ease
+
+Last item: border-bottom: none
+Product Image:
+
+Size: 80px × 80px
+Border-radius: 12px
+Object-fit: cover
+Border: 1px solid rgba(0,0,0,0.06)
+Transition: transform 0.3s ease
+
+Order Details Container:
+Product Name:
+
+Font: Inter, 17px, weight: 600
+Color: #1a3a3a
+Margin-bottom: 8px
+
+Order Meta (Order ID, Items, Date):
+
+Font: Inter, 13px, weight: 400
+Color: #6b7280
+Display: flex with separators
+Gap: 12px
+
+Separator:
+
+Content: "•"
+Color: rgba(107,114,128,0.4)
+
+Status Badge:
+
+Padding: 8px 16px
+Border-radius: 20px
+Font: Inter, 12px, weight: 600
+Letter-spacing: 0.5px
+Text-transform: uppercase
+Background colors:
+
+Delivered: rgba(16,185,129,0.1), color: #059669
+In Transit: rgba(245,158,11,0.1), color: #d97706
+Processing: rgba(59,130,246,0.1), color: #2563eb
+
+
+Icon: 16px, margin-right: 6px
+
+Price:
+
+Font: Playfair Display, 22px, weight: 600
+Color: #1a3a3a
+Text-align: right
+
+Order Card Animations:
+javascript// Entrance
+initial: { opacity: 0, x: -20 }
+animate: { opacity: 1, x: 0 }
+transition: { 
+  duration: 0.5, 
+  delay: 1.2 + (index * 0.1) 
+}
+
+// Hover
+whileHover: { 
+  backgroundColor: "rgba(248,246,240,0.3)",
+  x: 4
+}
+
+// Image hover
+image: {
+  whileHover: { scale: 1.05 }
+}
+
+8. LOYALTY POINTS BANNER
+Container
+
+Margin: 80px 0 0
+Padding: 48px 56px
+Background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)
+Border-radius: 24px
+Border: 2px solid rgba(212,175,55,0.3)
+Display: Grid
+Grid-template-columns: auto 1fr auto
+Gap: 32px
+Align-items: center
+Position: relative
+Overflow: hidden
+
+Decorative Elements:
+
+Floating stars (SVG)
+Positions: Absolute, various coordinates
+Animation: Float and rotate
+Opacity: 0.2-0.4
+
+Icon Section
+Container:
+
+Size: 72px × 72px
+Border-radius: 50%
+Background: #d4af37
+Display: flex, center
+Box-shadow: 0 8px 24px rgba(212,175,55,0.3)
+
+Icon:
+
+Size: 36px
+Color: #1a3a3a
+
+Content Section
+"You have 1,240 points!" Text:
+
+Font: Playfair Display, 32px, weight: 600
+Color: #1a3a3a
+Margin-bottom: 12px
+
+Description:
+
+Font: Inter, 15px, weight: 400
+Color: #78350f
+Line-height: 1.6
+Max-width: 600px
+
+"Only 260 points until Gold tier!" subtext:
+
+Font: Inter, 13px, weight: 600
+Color: #92400e
+Margin-top: 8px
+Display: flex with progress icon
+
+CTA Button
+
+Padding: 14px 32px
+Background: #1a3a3a
+Color: #d4af37
+Font: Inter, 15px, weight: 600
+Border-radius: 12px
+Border: none
+Cursor: pointer
+Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+Box-shadow: 0 4px 16px rgba(26,58,58,0.2)
+Text-transform: uppercase
+Letter-spacing: 1px
+Display: flex, align-center, gap: 8px
+
+Arrow Icon:
+
+Size: 18px
+Transition: transform 0.3s
+
+Button Animations:
+javascriptwhileHover: { 
+  backgroundColor: "#2a4a5a",
+  boxShadow: "0 6px 24px rgba(26,58,58,0.3)",
+  scale: 1.02
+}
+whileTap: { scale: 0.98 }
+
+// Arrow slide on hover
+arrow: {
+  whileHover: { x: 4 }
+}
+Banner Animation:
+javascriptinitial: { opacity: 0, y: 30, scale: 0.95 }
+animate: { opacity: 1, y: 0, scale: 1 }
+transition: { 
+  duration: 0.7, 
+  delay: 1.5,
+  ease: [0.25, 0.46, 0.45, 0.94]
+}
+
+// Floating stars
+stars: {
+  animate: { 
+    y: [0, -10, 0],
+    rotate: [0, 5, 0]
+  }
+  transition: {
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }
+}
+
+9. FOOTER
+Container
+
+Background: linear-gradient(135deg, #1a3a3a 0%, #2d5555 100%)
+Padding: 80px 120px 40px
+Color: #f8f6f0
+
+Upper Footer (Links Grid)
+Layout:
+
+Display: Grid
+Columns: 2fr 1fr 1fr 1fr 2fr
+Gap: 64px
+Margin-bottom: 64px
+
+Brand Section (Left):
+Logo:
+
+Font: Playfair Display, 36px
+Color: #d4af37
+Letter-spacing: 3px
+Margin-bottom: 20px
+
+Tagline:
+
+Font: Inter, 15px, weight: 400
+Color: rgba(248,246,240,0.7)
+Line-height: 1.7
+Max-width: 320px
+Margin-bottom: 24px
+
+Social Icons:
+
+Display: flex, gap: 16px
+Icon size: 40px × 40px
+Border-radius: 50%
+Background: rgba(248,246,240,0.1)
+Color: rgba(248,246,240,0.7)
+Transition: all 0.3s
+Hover: background #d4af37, color #1a3a3a
+
+Link Columns:
+Column Title:
+
+Font: Inter, 13px, weight: 600
+Color: #d4af37
+Text-transform: uppercase
+Letter-spacing: 1.5px
+Margin-bottom: 20px
+
+Links:
+
+Font: Inter, 14px, weight: 400
+Color: rgba(248,246,240,0.7)
+Line-height: 2.2
+Transition: all 0.3s
+Hover: color #d4af37, paddingLeft 4px
+
+Newsletter Section (Right):
+Title:
+
+Font: Inter, 16px, weight: 600
+Color: #f8f6f0
+Margin-bottom: 12px
+
+Input Container:
+
+Display: flex
+Gap: 8px
+Margin-top: 16px
+
+Email Input:
+
+Flex: 1
+Padding: 12px 16px
+Background: rgba(248,246,240,0.1)
+Border: 1px solid rgba(248,246,240,0.2)
+Border-radius: 8px
+Color: #f8f6f0
+Font: Inter, 14px
+Transition: all 0.3s
+Focus: border-color #d4af37, background rgba(248,246,240,0.15)
+
+Subscribe Button:
+
+Padding: 12px 24px
+Background: #d4af37
+Color: #1a3a3a
+Border: none
+Border-radius: 8px
+Font: Inter, 14px, weight: 600
+Cursor: pointer
+Transition: all 0.3s
+Hover: background #e5c158, transform scale(1.02)
+
+Lower Footer (Copyright)
+Container:
+
+Padding-top: 32px
+Border-top: 1px solid rgba(248,246,240,0.1)
+Display: Flex, justify-between, align-center
+
+Copyright Text:
+
+Font: Inter, 13px, weight: 400
+Color: rgba(248,246,240,0.5)
+
+Footer Links:
+
+Display: flex, gap: 32px
+Font: Inter, 13px, weight: 400
+Color: rgba(248,246,240,0.5)
+Transition: color 0.3s
+Hover: color #d4af37
+
+Address & Hours:
+
+Font: Inter, 13px
+Color: rgba(248,246,240,0.6)
+Text-align: center
+Margin-top: 24px
+
+
+10. RESPONSIVE BREAKPOINTS
+Desktop (1440px+)
+
+All specifications as documented above
+
+Laptop (1024px - 1439px)
+
+Container padding: 48px 80px
+Hero height: 380px
+Stats grid: Same (4 columns)
+Quick actions: 4 columns
+
+Tablet (768px - 1023px)
+
+Container padding: 32px 40px
+Hero: Stack profile and stats vertically
+Stats grid: 2 columns
+Quick actions: 2 columns
+Orders: Stack image and details
+Footer: 2 column grid
+
+Mobile (< 768px)
+
+Container padding: 24px 20px
+Hero height: auto, padding 40px 24px
+Profile size: 80px
+Name: 32px
+Stats: Stack vertically, full width
+Navigation: Horizontal scroll
+Stats grid: 1 column
+Quick actions: 1 column
+Orders: Stack all vertically
+Footer: 1 column stack
+
+
+11. MICRO-INTERACTIONS & ANIMATIONS
+Page Load Sequence
+javascript// 1. Header fade in
+header: { duration: 0.4, delay: 0 }
+
+// 2. Hero profile scale in
+profile: { duration: 0.6, delay: 0.1 }
+
+// 3. Hero text stagger
+welcomeText: { duration: 0.6, delay: 0.2 }
+name: { duration: 0.6, delay: 0.3 }
+memberSince: { duration: 0.6, delay: 0.4 }
+
+// 4. Stats stagger
+stats: { duration: 0.7, delay: 0.5 + (index * 0.1) }
+
+// 5. Navigation tabs slide
+tabs: { duration: 0.4, delay: 0.8 }
+
+// 6. Stats cards stagger
+statsCards: { duration: 0.6, delay: index * 0.1 }
+
+// 7. Quick actions stagger
+quickActions: { duration: 0.5, delay: 0.8 + (index * 0.08) }
+
+// 8. Orders stagger
+orders: { duration: 0.5, delay: 1.2 + (index * 0.1) }
+
+// 9. Loyalty banner
+loyaltyBanner: { duration: 0.7, delay: 1.5 }
+Scroll Animations
+
+Navigation Sticky: Blur background, add shadow on scroll
+Stats Cards: Fade in when 30% visible
+Parallax Effect: Hero background subtle movement
+Progress Indicators: Animate fill on scroll into view
+
+Hover Micro-interactions
+
+All Cards: Lift on hover (-8px), shadow increase
+Icons: Slight rotation (8deg) and scale (1.1)
+Buttons: Scale 1.02, shadow expansion
+Links: Underline slide from left, color change
+Images: Scale 1.05, brightness increase
+
+Click Feedback
+
+Buttons: Scale 0.97 on tap
+Cards: Subtle scale 0.98 on tap
+Icons: Pulse effect on click
+
+Loading States
+
+Skeleton screens for cards while loading
+Shimmer effect on placeholder elements
+Progressive enhancement as data loads
+
+
+12. ACCESSIBILITY ENHANCEMENTS
+Color Contrast
+
+All text meets WCAG AAA standards (7:1 minimum)
+Focus indicators: 3px solid #d4af37
+Link underlines for keyboard navigation
+
+Keyboard Navigation
+
+Tab order: Logical top to bottom
+Skip to content link
+All interactive elements focusable
+Escape to close modals/dropdowns
+
+Screen Reader Support
+
+Semantic HTML5 elements
+ARIA labels on all icons
+Alt text for images
+Live regions for dynamic updates
+Hidden text for icon-only buttons
+
+Motion Preferences
+css@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+13. PERFORMANCE OPTIMIZATIONS
+Images
+
+WebP format with JPEG fallback
+Lazy loading for below-fold images
+Responsive images with srcset
+80% quality compression
+
+Fonts
+
+Preload critical fonts
+Font-display: swap
+Subset fonts to used characters
+
+Code Splitting
+
+Lazy load non-critical components
+Route-based code splitting
+Tree shaking unused code
+
+Animations
+
+Use transform and opacity only
+Will-change property for animated elements
+GPU acceleration with transform3d
+RequestAnimationFrame for smooth animations
+
+
+14. COLOR PALETTE DOCUMENTATION
+Primary Colors
+
+Deep Teal: #1a3a3a (Headers, primary text)
+Medium Teal: #2a4a5a (Hover states, secondary elements)
+Light Teal: #2d5555 (Gradients)
+
+Continue6:34 pmGold Accents
+
+Primary Gold: #d4af37 (CTAs, highlights)
+Light Gold: #e5c158 (Hover states)
+Pale Gold: rgba(212,175,55,0.1) (Backgrounds)
+
+Neutrals
+
+Warm White: #f8f6f0 (Text on dark)
+Off White: #fafaf8 (Page background)
+Pure White: #ffffff (Card backgrounds)
+Charcoal: #1a3a3a (Primary text)
+Gray: #6b7280 (Secondary text)
+Light Gray: #f3f4f6 (Borders, subtle backgrounds)
+
+Status Colors
+
+Success Green: #10b981 (Delivered, positive)
+Warning Amber: #f59e0b (In transit, caution)
+Info Blue: #3b82f6 (Processing, informational)
+Error Red: #ef4444 (Errors, urgent)
+
+
+15. TYPOGRAPHY SYSTEM
+Font Families
+
+Display/Headings: Playfair Display (Serif)
+Body/UI: Inter (Sans-serif)
+
+Scale
+
+Hero Name: 48px / 3rem
+Section Titles: 32px / 2rem
+Subsection Titles: 28px / 1.75rem
+Card Values: 36px / 2.25rem
+Body Large: 17px / 1.063rem
+Body: 15px / 0.938rem
+Body Small: 13px / 0.813rem
+Labels: 12px / 0.75rem
+Micro: 11px / 0.688rem
+
+Weights
+
+Regular: 400
+Medium: 500
+Semibold: 600
+Bold: 700 (sparingly used)
+
+Line Heights
+
+Tight: 1.2 (large display)
+Normal: 1.5 (body text)
+Relaxed: 1.7 (reading text)
+Loose: 2.2 (link lists)
+
+Letter Spacing
+
+Extra tight: -0.5px (large headings)
+Normal: 0px (body)
+Wide: 1px (labels)
+Extra wide: 2-3px (small caps, tags)
+
+
+16. SPACING SYSTEM
+Base Unit: 4px
+Scale:
+
+4px: Micro spacing (icon gaps)
+8px: Tight spacing (inline elements)
+12px: Small spacing (text margins)
+16px: Medium spacing (icon margins)
+20px: Standard spacing (card padding small)
+24px: Comfortable spacing (card gaps)
+32px: Large spacing (section margins)
+48px: Extra large (major sections)
+64px: Section breaks
+80px: Major section breaks
+120px: Container padding
+
+
+IMPLEMENTATION CHECKLIST
+Phase 1: Foundation (Week 1)
+
+ Set up design system (colors, typography, spacing)
+ Create component library structure
+ Implement header and navigation
+ Build hero section with animations
+
+Phase 2: Core Components (Week 2)
+
+ Dashboard navigation tabs
+ Statistics cards with animations
+ Quick actions section
+ Recent orders list
+
+Phase 3: Enhancement (Week 3)
+
+ Loyalty points banner
+ Footer redesign
+ Micro-interactions refinement
+ Responsive breakpoints
+
+Phase 4: Polish (Week 4)
+
+ Accessibility audit and fixes
+ Performance optimization
+ Cross-browser testing
+ Animation fine-tuning
+ User testing and iteration
+
+
+SUCCESS METRICS
+Quantitative
+
+Page load time < 2 seconds
+Lighthouse score > 95
+60fps animations
+Click-through rate increase 30%
+Time on page increase 45%
+
+Qualitative
+
+User satisfaction score > 4.5/5
+Reduced support tickets for navigation
+Positive feedback on visual appeal
+Improved brand perception

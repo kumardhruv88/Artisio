@@ -1,0 +1,2597 @@
+i want this kind of modern user interface full real life live moving objects animated kind og websites  "Adachi Restaurant - Birmingham, MI"  this is the live server of that website i also want the same exact looking website for my project artiso but in the context of my products as our website is e commerce after after analysing these images can you draft the full project fetaures and need tech stack requireed for making this kind of websites because i have implemented the previous versio of webiste but not fully so just like the preios report whuch u have created in fulll detail i also want the same detaled but but in the context of this website just like a senior full stack devloper act like you are the denior anlysing this website and checking the ful code structure of this website and then apply the designing ui to our artiso " make the full detauled project requirements1:01 pmARTISIO - Premium E-Commerce Platform
+Complete Project Specification Based on Adachi Restaurant Design Analysis
+
+🎯 PROJECT OVERVIEW
+Project Name: ARTISIO
+Industry: Artisan Food & Beverage E-Commerce
+Design Inspiration: Adachi Restaurant Website (Birmingham, MI)
+Design Philosophy: Ultra-premium, animated, immersive storytelling with full-screen experiences
+Key Design Characteristics Identified from Adachi:
+
+Dark, sophisticated color palette (deep teal #0A2E2E, charcoal blacks)
+Large, elegant serif typography (Playfair Display style)
+Full-screen immersive sections with parallax effects
+Subtle, smooth animations on scroll
+Product/food imagery as hero elements
+Minimal navigation, maximum visual impact
+Floating, translucent overlay texts
+Organic, flowing transitions between sections
+
+
+🎨 DETAILED DESIGN SYSTEM (Adachi-Inspired)
+Color Palette
+css/* Primary Colors */
+--primary-dark: #0A2E2E;        /* Deep teal-black (backgrounds) */
+--primary-teal: #1A4D4D;        /* Rich teal (accents) */
+--primary-gold: #D4AF37;        /* Antique gold (highlights) */
+
+/* Secondary Colors */
+--secondary-cream: #F8F6F0;     /* Warm cream (text backgrounds) */
+--secondary-beige: #E8E4DB;     /* Light beige (sections) */
+--secondary-sage: #8B9D83;      /* Soft sage green (subtle accents) */
+
+/* Neutral Colors */
+--neutral-white: #FFFFFF;       /* Pure white (text on dark) */
+--neutral-off-white: #FAF9F6;   /* Off-white (light sections) */
+--neutral-charcoal: #1C1C1C;    /* Deep charcoal (text) */
+--neutral-gray: #6B6B6B;        /* Medium gray (secondary text) */
+
+/* Overlay Colors */
+--overlay-dark: rgba(10, 46, 46, 0.85);     /* Dark overlay for text readability */
+--overlay-light: rgba(248, 246, 240, 0.7);  /* Light overlay */
+--glass-effect: rgba(255, 255, 255, 0.1);   /* Glassmorphism */
+Typography System
+css/* Font Families */
+--font-display: 'Playfair Display', 'Cormorant Garamond', serif;  /* Large headlines */
+--font-heading: 'Cinzel', 'Bodoni Moda', serif;                    /* Section headers */
+--font-body: 'Montserrat', 'Lato', sans-serif;                     /* Body text */
+--font-accent: 'Italiana', 'Libre Baskerville', serif;             /* Decorative text */
+
+/* Font Sizes (Responsive) */
+--text-hero: clamp(3.5rem, 8vw, 9rem);       /* 56px - 144px */
+--text-display: clamp(2.5rem, 6vw, 6rem);    /* 40px - 96px */
+--text-h1: clamp(2rem, 5vw, 4.5rem);         /* 32px - 72px */
+--text-h2: clamp(1.75rem, 4vw, 3.5rem);      /* 28px - 56px */
+--text-h3: clamp(1.5rem, 3vw, 2.5rem);       /* 24px - 40px */
+--text-body-lg: clamp(1.125rem, 2vw, 1.375rem); /* 18px - 22px */
+--text-body: clamp(1rem, 1.5vw, 1.125rem);   /* 16px - 18px */
+--text-small: clamp(0.875rem, 1.2vw, 1rem);  /* 14px - 16px */
+
+/* Letter Spacing */
+--tracking-tight: -0.02em;
+--tracking-normal: 0;
+--tracking-wide: 0.05em;
+--tracking-wider: 0.1em;
+--tracking-widest: 0.15em;
+
+/* Line Heights */
+--leading-tight: 1.1;
+--leading-snug: 1.3;
+--leading-normal: 1.5;
+--leading-relaxed: 1.75;
+--leading-loose: 2;
+Spacing & Layout
+css/* Container Widths */
+--container-xs: 480px;
+--container-sm: 640px;
+--container-md: 768px;
+--container-lg: 1024px;
+--container-xl: 1280px;
+--container-2xl: 1536px;
+--container-full: 100%;
+
+/* Section Spacing */
+--section-padding-y: clamp(4rem, 10vh, 8rem);    /* Vertical padding */
+--section-padding-x: clamp(1.5rem, 5vw, 6rem);   /* Horizontal padding */
+--section-gap: clamp(3rem, 8vh, 6rem);            /* Between sections */
+
+/* Element Spacing */
+--space-xs: 0.5rem;    /* 8px */
+--space-sm: 1rem;      /* 16px */
+--space-md: 2rem;      /* 32px */
+--space-lg: 3rem;      /* 48px */
+--space-xl: 4rem;      /* 64px */
+--space-2xl: 6rem;     /* 96px */
+--space-3xl: 8rem;     /* 128px */
+Animation & Effects
+css/* Transition Durations */
+--transition-fast: 200ms;
+--transition-base: 400ms;
+--transition-slow: 600ms;
+--transition-slower: 800ms;
+--transition-slowest: 1200ms;
+
+/* Easing Functions */
+--ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);          /* Standard smooth */
+--ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);  /* Power2 */
+--ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);      /* Expo out */
+--ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035); /* Expo in */
+--ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Elastic */
+
+/* Effects */
+--blur-sm: blur(4px);
+--blur-md: blur(8px);
+--blur-lg: blur(16px);
+--backdrop-blur: blur(12px) saturate(180%);
+
+/* Shadows */
+--shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+--shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+--shadow-hard: 0 16px 64px rgba(0, 0, 0, 0.18);
+--shadow-glow: 0 0 40px rgba(212, 175, 55, 0.3);
+
+📱 PAGE-BY-PAGE BREAKDOWN (Adachi-Inspired Design)
+1. HOMEPAGE
+Section 1: Hero Section (Full Viewport)
+Visual Concept: Full-screen video/animated background with product imagery
+Elements:
+
+Full-screen looping video or cinemagraph (artisans crafting products)
+Large overlay typography: "Flavorful Components" (as seen in Adachi)
+Subtle particle animation or floating food elements
+Smooth scroll indicator at bottom
+Dark overlay gradient (top to bottom: transparent → rgba(10,46,46,0.4))
+Parallax effect on scroll
+
+Animations:
+
+Text fades in with staggered word animation (0.3s delay between words)
+Background video/image subtle zoom (scale 1.0 → 1.05 over 20s)
+Scroll indicator gentle bounce animation
+Mouse parallax effect on foreground elements
+
+HTML Structure:
+html<section class="hero-section">
+  <div class="hero-video-bg">
+    <video autoplay loop muted playsinline>
+      <source src="artisan-crafting.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="word">Flavorful</span>
+      <span class="word">Components</span>
+    </h1>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+CSS Key Styles:
+css.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  animation: subtle-zoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  color: var(--neutral-white);
+  text-align: center;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-fade-in 1s var(--ease-out-expo) forwards;
+}
+
+.word:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes word-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+Section 2: Featured Products Showcase
+Visual Concept: Full-width horizontal scroll gallery (like Adachi's food images)
+Elements:
+
+Horizontal scrolling container with 6-8 large product cards
+Each card: High-quality product image (80% height), Product name, Price, "Quick View" button
+Smooth momentum scrolling with mouse drag
+Subtle parallax on individual cards
+Card hover effect: image zoom + overlay appears
+
+Interaction:
+
+Mouse wheel → horizontal scroll
+Click and drag to scroll
+Hover on card → image zooms to 1.1x, overlay with "View Product" appears
+Click → opens product detail modal or navigates to product page
+
+HTML Structure:
+html<section class="featured-products">
+  <div class="section-header">
+    <h2>Artisan Collection</h2>
+  </div>
+  <div class="horizontal-scroll-container">
+    <div class="product-card">
+      <div class="product-image-wrapper">
+        <img src="product-1.jpg" alt="Product Name">
+        <div class="product-overlay">
+          <button class="view-product-btn">View Product</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <h3>Ethiopian Single Origin</h3>
+        <p class="price">$24.00</p>
+      </div>
+    </div>
+    <!-- Repeat for 6-8 products -->
+  </div>
+</section>
+CSS Key Styles:
+css.horizontal-scroll-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.product-card {
+  min-width: 400px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.product-image-wrapper {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+Section 3: Brand Story (Split Screen)
+Visual Concept: 50/50 split - left side image, right side text (like Adachi's "About Adachi")
+Elements:
+
+Left: Large artisan portrait or workshop image with subtle parallax
+Right: Headline "Our Story", body text, decorative line separators
+Background: cream/beige color
+Text appears on scroll with fade-up animation
+
+Animations:
+
+On scroll into view: Image slides in from left (opacity 0 → 1, translateX -50px → 0)
+Text content fades up with stagger (each paragraph 0.2s delay)
+Decorative line draws from left to right
+
+Section 4: Product Categories Grid
+Visual Concept: Large clickable category cards in 2-column grid
+Elements:
+
+4-6 large category cards (e.g., Coffee, Chocolate, Preserves, Spirits)
+Each card: Full-bleed category image, large overlay text, hover reveal of subcategories
+Hover: Image zooms, dark overlay intensifies, subcategories slide up
+
+HTML Structure:
+html<section class="category-grid">
+  <div class="category-card">
+    <div class="category-image">
+      <img src="coffee-category.jpg" alt="Coffee">
+    </div>
+    <div class="category-overlay">
+      <h3 class="category-title">Coffee</h3>
+      <ul class="subcategories">
+        <li>Single Origin</li>
+        <li>Blends</li>
+        <li>Espresso</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Repeat for categories -->
+</section>
+Section 5: Instagram Gallery (Masonry Grid)
+Visual Concept: Pinterest-style masonry layout with Instagram feed
+Elements:
+
+12-20 images in masonry grid
+Click opens lightbox with full image
+"Follow @artisio" CTA at bottom
+Subtle hover animation (scale + shadow)
+
+Section 6: Newsletter Signup
+Visual Concept: Full-width section with background pattern, centered form
+Elements:
+
+Headline: "Join the Artisan Community"
+Subheading: "Get 10% off your first order"
+Email input with elegant styling
+Subscribe button with hover animation
+Trust badges (email privacy, unsubscribe anytime)
+
+
+2. PRODUCT CATALOG PAGE
+Layout Structure:
+Left Sidebar (25% width):
+
+Sticky sidebar with filters
+Collapsible filter sections
+
+Main Content (75% width):
+
+Breadcrumb navigation
+Results count + sort dropdown
+Product grid (3 columns on desktop, 2 on tablet, 1 on mobile)
+
+Product Card Design (Detailed):
+Card Structure:
+html<div class="product-card">
+  <div class="product-badges">
+    <span class="badge new">New</span>
+    <span class="badge sale">-20%</span>
+  </div>
+  <div class="product-image-container">
+    <img src="product-main.jpg" class="product-image-main" alt="">
+    <img src="product-hover.jpg" class="product-image-hover" alt="">
+    <div class="quick-actions">
+      <button class="action-btn wishlist">
+        <svg><!-- heart icon --></svg>
+      </button>
+      <button class="action-btn quick-view">
+        <svg><!-- eye icon --></svg>
+      </button>
+    </div>
+  </div>
+  <div class="product-details">
+    <p class="product-category">Artisan Coffee</p>
+    <h3 class="product-name">Ethiopian Yirgacheffe</h3>
+    <div class="product-rating">
+      <div class="stars">★★★★★</div>
+      <span class="review-count">(47)</span>
+    </div>
+    <div class="product-pricing">
+      <span class="price-current">$24.00</span>
+      <span class="price-original">$30.00</span>
+    </div>
+    <button class="add-to-cart-btn">
+      <span>Add to Cart</span>
+      <svg class="cart-icon"><!-- cart --></svg>
+    </button>
+  </div>
+</div>
+Card Animations:
+
+Hover: Main image fades out (opacity 1 → 0), hover image fades in
+Quick actions slide in from right
+Card lifts with shadow (translateY 0 → -8px)
+Add to cart button expands on hover
+
+CSS:
+css.product-card {
+  position: relative;
+  background: var(--neutral-white);
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.product-image-container {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.product-image-main,
+.product-image-hover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s var(--ease-smooth);
+}
+
+.product-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-card:hover .product-image-hover {
+  opacity: 1;
+}
+
+.quick-actions {
+  position: absolute;
+  top: 1rem;
+  right: -60px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: right 0.4s var(--ease-out-expo);
+}
+
+.product-card:hover .quick-actions {
+  right: 1rem;
+}
+
+.action-btn {
+  width: 44px;
+  height: 44px;
+  background: var(--neutral-white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.action-btn:hover {
+  background: var(--primary-teal);
+  color: var(--neutral-white);
+  transform: scale(1.1);
+}
+Advanced Filters (Sidebar):
+Filter Sections:
+
+Price Range
+
+Dual-handle range slider
+Min/max input fields
+Dynamic price display
+
+
+Categories
+
+Expandable tree structure
+Checkboxes with product count
+"Show more" for 10+ items
+
+
+Dietary Tags
+
+Pill-style toggle buttons
+Icons for each tag (vegan icon, gluten-free icon, etc.)
+Multi-select
+
+
+Origin/Location
+
+Searchable dropdown
+Country flags
+Region grouping
+
+
+Artisan/Brand
+
+Alphabetical list with search
+Brand logos (small thumbnails)
+Multi-select
+
+
+Certifications
+
+Icon-based selection
+Tooltip on hover explaining certification
+
+
+Availability
+
+Radio buttons: All, In Stock, Pre-order
+
+
+
+Filter Interaction:
+
+Selected filters appear as dismissible chips at top of results
+Filter count badge on each section
+"Clear all" button
+Filters persist in URL parameters
+Smooth transition when filtering (fade out old results, fade in new)
+
+Mobile Filter Experience:
+
+Filters in slide-out drawer from bottom
+"Filter & Sort" button opens drawer
+Apply filters button at bottom
+Active filter count badge on button
+
+
+3. PRODUCT DETAIL PAGE
+Layout (Desktop):
+Left Side (60%):
+
+Main product image viewer
+Thumbnail gallery below (5-6 images)
+360° view option
+Video demo (if available)
+
+Right Side (40%):
+
+Sticky sidebar with product info
+Scrolls independently
+
+Image Gallery (Advanced):
+Features:
+
+Click main image → open full-screen lightbox with zoom
+Thumbnail gallery below with horizontal scroll
+Hover on thumbnail → preview in main image
+Swipe gesture support on mobile
+Pinch to zoom
+360° product viewer (Three.js integration)
+
+Lightbox Features:
+
+Full-screen overlay
+Image navigation (arrows, thumbnails strip at bottom)
+Zoom in/out controls
+Pinch to zoom on mobile
+Swipe to next/previous
+Close button (ESC key support)
+
+HTML:
+html<div class="product-gallery">
+  <div class="main-image-wrapper">
+    <div class="zoom-indicator">Click to zoom</div>
+    <img src="product-large-1.jpg" class="main-product-image" alt="">
+    <button class="fullscreen-btn">
+      <svg><!-- expand icon --></svg>
+    </button>
+  </div>
+  
+  <div class="thumbnail-gallery">
+    <button class="thumb-nav prev">‹</button>
+    <div class="thumbnails-container">
+      <div class="thumbnail active">
+        <img src="thumb-1.jpg" alt="">
+      </div>
+      <!-- 4-5 more thumbnails -->
+      <div class="thumbnail video-thumb">
+        <img src="video-poster.jpg" alt="">
+        <div class="play-icon">▶</div>
+      </div>
+    </div>
+    <button class="thumb-nav next">›</button>
+  </div>
+</div>
+Zoom Implementation (CSS + JS):
+css.main-image-wrapper {
+  position: relative;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.main-product-image {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.main-image-wrapper:hover .main-product-image {
+  transform: scale(1.5);
+  transform-origin: var(--mouse-x) var(--mouse-y);
+}
+javascript// Image zoom on mouse move
+const imageWrapper = document.querySelector('.main-image-wrapper');
+const image = document.querySelector('.main-product-image');
+
+imageWrapper.addEventListener('mousemove', (e) => {
+  const rect = imageWrapper.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+  
+  image.style.transformOrigin = `${x}% ${y}%`;
+});
+Product Info Sidebar:
+Sections (in order):
+
+Breadcrumb + Share
+
+Home > Coffee > Single Origin > Ethiopian Yirgacheffe
+Share icons (Facebook, Twitter, Pinterest, Copy Link)
+
+
+Product Title & Rating
+
+Large product name (--text-h2)
+Star rating + review count (clickable, scrolls to reviews)
+SKU display
+
+
+Pricing
+
+Current price (large, --text-h3)
+Original price (struck through if on sale)
+Savings badge ("Save $6 (20%)")
+Member price badge (if applicable)
+
+
+Short Description
+
+2-3 sentence teaser
+"Read full description" link (scrolls to tabs)
+
+
+Variants/Options
+
+Size selector (button group: Small, Medium, Large)
+Color/flavor selector (color swatches or dropdown)
+Each selection shows stock status
+
+
+Quantity Selector
+
+Minus/plus buttons
+Number input
+Stock remaining indicator ("Only 5 left!")
+
+
+Add to Cart Section
+
+Large "Add to Cart" button (full width)
+Add to Wishlist button (outline style)
+In stock / Low stock / Out of stock indicator
+
+
+Product Highlights
+
+Icon list: Organic, Fair Trade, Small Batch, etc.
+Shipping info: "Free shipping on orders $50+"
+Return policy: "30-day return guarantee"
+
+
+Artisan Info Card
+
+Small artisan photo
+Artisan name
+Location
+"View profile" link
+
+
+
+Sticky Behavior:
+
+Sidebar becomes sticky after scrolling past images
+Stops sticking before footer
+Smooth sticky transition
+
+Add to Cart Animation:
+javascript// Particle effect on add to cart
+button.addEventListener('click', () => {
+  // 1. Create mini product image
+  const flyingImage = productImage.cloneNode();
+  flyingImage.classList.add('flying-to-cart');
+  
+  // 2. Position at button location
+  const buttonRect = button.getBoundingClientRect();
+  flyingImage.style.left = buttonRect.left + 'px';
+  flyingImage.style.top = buttonRect.top + 'px';
+  
+  // 3. Animate to cart icon
+  const cartIcon = document.querySelector('.cart-icon');
+  const cartRect = cartIcon.getBoundingClientRect();
+  
+  flyingImage.animate([
+    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+    { transform: `translate(${cartRect.left - buttonRect.left}px, ${cartRect.top - buttonRect.top}px) scale(0.1)`, opacity: 0 }
+  ], {
+    duration: 800,
+    easing: 'cubic-bezier(0.5, 0, 0.5, 1)'
+  }).onfinish = () => {
+    // 4. Cart icon bounce animation
+    cartIcon.classList.add('bounce');
+    // 5. Update cart count
+    updateCartCount();
+  };
+});
+Product Tabs Section:
+Tabs:
+
+Description
+Ingredients/Materials
+Artisan Story
+Reviews
+Q&A
+Shipping & Returns
+
+Tab Design:
+
+Horizontal tab navigation (sticky on scroll)
+Active tab indicator (sliding underline)
+Smooth scroll to section on click
+Spy scrolling (active tab changes based on scroll position)
+
+Tab Content:
+Description Tab:
+
+Full product description (rich text)
+Process/crafting method
+Flavor notes / tasting guide (visual flavor wheel)
+Pairing suggestions (with linked products)
+
+Ingredients Tab:
+
+Ingredient list (with allergen highlighting)
+Nutritional information table
+Sourcing information
+Certifications details
+
+Artisan Story Tab:
+
+Large artisan photo
+Full biography
+Origin story
+Video interview (if available)
+Behind-the-scenes photos (gallery)
+Sustainability practices
+"Support this artisan" donation button
+
+Reviews Tab:
+
+Average rating display (large)
+Rating breakdown (5 stars: 70%, 4 stars: 20%, etc.) with visual bars
+Verified purchase badge
+Sort dropdown (Most recent, Highest rated, Lowest rated, Most helpful)
+Filter by rating (5★, 4★, etc.)
+Pagination or infinite scroll
+"Write a review" button (opens modal)
+
+Review Card:
+html<div class="review-card">
+  <div class="review-header">
+    <div class="reviewer-info">
+      <img src="avatar.jpg" class="reviewer-avatar" alt="">
+      <div>
+        <p class="reviewer-name">Sarah M.</p>
+        <div class="review-meta">
+          <span class="review-date">2 weeks ago</span>
+          <span class="verified-badge">✓ Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+    <div class="review-rating">
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+  
+  <h4 class="review-title">Absolutely delicious!</h4>
+  <p class="review-text">This Ethiopian coffee exceeded my expectations. The floral notes are incredible...</p>
+  
+  <div class="review-images">
+    <img src="review-photo-1.jpg" alt="">
+    <img src="review-photo-2.jpg" alt="">
+  </div>
+  
+  <div class="review-actions">
+    <button class="helpful-btn">
+      <svg>👍</svg>
+      Helpful (12)
+    </button>
+    <button class="report-btn">Report</button>
+  </div>
+  
+  <div class="admin-response">
+    <div class="response-header">
+      <img src="artisio-logo.svg" alt="">
+      <span>Response from ARTISIO</span>
+    </div>
+    <p>Thank you for your kind words, Sarah! We're thrilled you enjoyed it.</p>
+  </div>
+</div>
+Q&A Tab:
+
+List of questions and answers
+"Ask a question" button
+Upvote/downvote questions
+Sort by: Most helpful, Most recent, Unanswered
+
+Related Products Section:
+
+"You might also like" heading
+Horizontal scrolling carousel (4-6 products)
+Same product card design as catalog
+
+Recently Viewed Products:
+
+Sticky bottom bar or sidebar widget
+Small product thumbnails
+Quick access to previously viewed items
+
+
+4. SHOPPING CART PAGE
+Layout:
+Desktop (2-column):
+
+Left (70%): Cart items list
+Right (30%): Order summary (sticky)
+
+Mobile:
+
+Stacked: Cart items → Order summary
+
+Cart Item Row (Detailed):
+html<div class="cart-item">
+  <div class="item-image">
+    <img src="product-thumb.jpg" alt="">
+  </div>
+  
+  <div class="item-details">
+    <div class="item-header">
+      <h3 class="item-name">Ethiopian Yirgacheffe</h3>
+      <button class="remove-btn" aria-label="Remove item">
+        <svg>×</svg>
+      </button>
+    </div>
+    
+    <div class="item-variant">
+      <span>Size: Medium (250g)</span>
+      <span>Grind: Whole Bean</span>
+    </div>
+    
+    <div class="item-meta">
+      <span class="in-stock">✓ In Stock</span>
+      <span class="gift-eligible">🎁 Gift wrap available</span>
+    </div>
+    
+    <div class="item-actions">
+      <div class="quantity-selector">
+        <button class="qty-minus">−</button>
+        <input type="number" value="1" min="1" max="10">
+        <button class="qty-plus">+</button>
+      </div>
+      
+      <button class="save-for-later">
+        <svg><!-- heart --></svg>
+        Save for later
+      </button>
+    </div>
+  </div>
+  
+  <div class="item-pricing">
+    <p class="item-price">$24.00</p>
+    <p class="Continue1:04 pmitem-subtotal">$24.00</p>
+  </div>
+</div>
+````
+Cart Interactions:
+
+Quantity change → instant price update with animation
+Remove item → fade out animation + undo toast notification
+Save for later → moves to "Saved Items" section below cart
+All changes auto-save to backend
+
+Empty Cart State:
+html<div class="empty-cart">
+  <svg class="empty-cart-icon"><!-- empty bag illustration --></svg>
+  <h2>Your cart is empty</h2>
+  <p>Looks like you haven't added anything to your cart yet.</p>
+  <button class="continue-shopping-btn">Start Shopping</button>
+  
+  <div class="saved-items-preview">
+    <h3>Items you saved for later</h3>
+    <!-- Show saved items -->
+  </div>
+</div>
+Order Summary Sidebar:
+html<div class="order-summary">
+  <h3>Order Summary</h3>
+  
+  <div class="summary-rows">
+    <div class="summary-row">
+      <span>Subtotal (3 items)</span>
+      <span>$72.00</span>
+    </div>
+    
+    <div class="summary-row">
+      <span>Shipping</span>
+      <span class="free-shipping">FREE</span>
+    </div>
+    
+    <div class="summary-row">
+      <span>Tax (estimated)</span>
+      <span>$6.48</span>
+    </div>
+    
+    <div class="summary-row discount">
+      <span>Discount (WELCOME10)</span>
+      <span class="discount-amount">-$7.20</span>
+    </div>
+  </div>
+  
+  <div class="summary-total">
+    <span>Total</span>
+    <span class="total-amount">$71.28</span>
+  </div>
+  
+  <div class="promo-code-section">
+    <input type="text" placeholder="Enter promo code" id="promo-input">
+    <button class="apply-promo-btn">Apply</button>
+  </div>
+  
+  <div class="free-shipping-progress">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 85%"></div>
+    </div>
+    <p class="progress-text">Add $8 more for free shipping!</p>
+  </div>
+  
+  <button class="checkout-btn">
+    <span>Proceed to Checkout</span>
+    <svg>→</svg>
+  </button>
+  
+  <div class="payment-methods">
+    <img src="visa.svg" alt="Visa">
+    <img src="mastercard.svg" alt="Mastercard">
+    <img src="amex.svg" alt="Amex">
+    <img src="applepay.svg" alt="Apple Pay">
+  </div>
+  
+  <div class="trust-badges">
+    <div class="trust-badge">
+      <svg>🔒</svg>
+      <span>Secure Checkout</span>
+    </div>
+    <div class="trust-badge">
+      <svg>↩</svg>
+      <span>30-day Returns</span>
+    </div>
+  </div>
+</div>
+Suggested Products Section:
+
+"Complete your order" heading
+4-6 products frequently bought together
+Quick add to cart buttons
+
+
+5. CHECKOUT PAGE
+Layout:
+Desktop:
+
+Left (60%): Checkout form
+Right (40%): Order review (sticky)
+
+Mobile:
+
+Order summary collapsed (expandable)
+Checkout form
+Sticky "Place Order" button at bottom
+
+Progress Indicator:
+html<div class="checkout-progress">
+  <div class="progress-step active completed">
+    <div class="step-icon">✓</div>
+    <span class="step-label">Cart</span>
+  </div>
+  
+  <div class="progress-line completed"></div>
+  
+  <div class="progress-step active">
+    <div class="step-icon">2</div>
+    <span class="step-label">Information</span>
+  </div>
+  
+  <div class="progress-line"></div>
+  
+  <div class="progress-step">
+    <div class="step-icon">3</div>
+    <span class="step-label">Payment</span>
+  </div>
+</div>
+Step 1: Contact Information
+html<div class="checkout-section">
+  <h2 class="section-title">Contact Information</h2>
+  
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+    <p class="field-hint">We'll send your order confirmation here</p>
+  </div>
+  
+  <div class="checkbox-group">
+    <input type="checkbox" id="email-updates">
+    <label for="email-updates">
+      Email me with news and exclusive offers
+    </label>
+  </div>
+  
+  <div class="divider">
+    <span>OR</span>
+  </div>
+  
+  <div class="social-login-options">
+    <button class="social-login-btn google">
+      <svg><!-- Google icon --></svg>
+      Continue with Google
+    </button>
+    <button class="social-login-btn facebook">
+      <svg><!-- Facebook icon --></svg>
+      Continue with Facebook
+    </button>
+  </div>
+  
+  <div class="account-check">
+    <p>Already have an account? <a href="/login">Log in</a></p>
+  </div>
+</div>
+Step 2: Shipping Information
+html<div class="checkout-section">
+  <h2 class="section-title">Shipping Address</h2>
+  
+  <div class="saved-addresses-dropdown">
+    <select id="saved-address">
+      <option value="">Enter new address</option>
+      <option value="address1">Home - 123 Main St, New York, NY 10001</option>
+      <option value="address2">Office - 456 Broadway, New York, NY 10012</option>
+    </select>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group half">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" required>
+    </div>
+    <div class="form-group half">
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" required>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="address-line1">Street Address</label>
+    <input type="text" id="address-line1" placeholder="123 Main Street" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="address-line2">Apartment, suite, etc. (optional)</label>
+    <input type="text" id="address-line2" placeholder="Apt 4B">
+  </div>
+  
+  <div class="form-row-three">
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" required>
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <select id="state" required>
+        <option value="">Select...</option>
+        <!-- All states -->
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="zip">ZIP Code</label>
+      <input type="text" id="zip" pattern="[0-9]{5}" required>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" placeholder="(555) 123-4567">
+    <p class="field-hint">For delivery updates</p>
+  </div>
+  
+  <div class="checkbox-group">
+    <input type="checkbox" id="save-address">
+    <label for="save-address">Save this address for next time</label>
+  </div>
+  
+  <div class="checkbox-group">
+    <input type="checkbox" id="set-default">
+    <label for="set-default">Set as default shipping address</label>
+  </div>
+</div>
+Address Autocomplete Integration:
+javascript// Google Places Autocomplete
+const addressInput = document.getElementById('address-line1');
+const autocomplete = new google.maps.places.Autocomplete(addressInput, {
+  types: ['address'],
+  componentRestrictions: { country: 'us' }
+});
+
+autocomplete.addListener('place_changed', () => {
+  const place = autocomplete.getPlace();
+  
+  // Auto-fill fields
+  document.getElementById('city').value = getComponent(place, 'locality');
+  document.getElementById('state').value = getComponent(place, 'administrative_area_level_1');
+  document.getElementById('zip').value = getComponent(place, 'postal_code');
+});
+Step 3: Delivery Options
+html<div class="checkout-section">
+  <h2 class="section-title">Delivery Method</h2>
+  
+  <div class="delivery-options">
+    <label class="delivery-option">
+      <input type="radio" name="delivery" value="standard" checked>
+      <div class="option-content">
+        <div class="option-header">
+          <span class="option-name">Standard Shipping</span>
+          <span class="option-price">FREE</span>
+        </div>
+        <p class="option-description">5-7 business days</p>
+      </div>
+    </label>
+    
+    <label class="delivery-option">
+      <input type="radio" name="delivery" value="express">
+      <div class="option-content">
+        <div class="option-header">
+          <span class="option-name">Express Shipping</span>
+          <span class="option-price">$15.00</span>
+        </div>
+        <p class="option-description">2-3 business days</p>
+      </div>
+    </label>
+    
+    <label class="delivery-option">
+      <input type="radio" name="delivery" value="overnight">
+      <div class="option-content">
+        <div class="option-header">
+          <span class="option-name">Overnight</span>
+          <span class="option-price">$30.00</span>
+        </div>
+        <p class="option-description">Next business day</p>
+      </div>
+    </label>
+  </div>
+  
+  <div class="delivery-date-picker">
+    <label for="delivery-date">Preferred Delivery Date (optional)</label>
+    <input type="date" id="delivery-date" min="2026-01-25">
+  </div>
+  
+  <div class="delivery-instructions">
+    <label for="delivery-notes">Delivery Instructions</label>
+    <textarea id="delivery-notes" rows="3" placeholder="e.g., Leave package at front door"></textarea>
+  </div>
+</div>
+Delivery Option Styling:
+css.delivery-option {
+  display: block;
+  padding: 1.5rem;
+  border: 2px solid var(--neutral-200);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+  margin-bottom: 1rem;
+}
+
+.delivery-option:has(input:checked) {
+  border-color: var(--primary-teal);
+  background: var(--secondary-cream);
+}
+
+.delivery-option:hover {
+  border-color: var(--primary-teal);
+  transform: translateX(4px);
+}
+Step 4: Gift Options
+html<div class="checkout-section gift-section">
+  <div class="section-header-with-toggle">
+    <h2 class="section-title">Gift Options</h2>
+    <label class="toggle-switch">
+      <input type="checkbox" id="is-gift">
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+  
+  <div class="gift-options-content" style="display: none;">
+    <div class="form-group">
+      <label for="gift-message">Gift Message (optional)</label>
+      <textarea id="gift-message" rows="4" maxlength="200" placeholder="Write a heartfelt message..."></textarea>
+      <p class="char-count">0 / 200 characters</p>
+    </div>
+    
+    <div class="gift-wrap-option">
+      <label class="checkbox-card">
+        <input type="checkbox" id="gift-wrap">
+        <div class="card-content">
+          <img src="gift-wrap-sample.jpg" alt="Gift wrap">
+          <div>
+            <h4>Premium Gift Wrapping</h4>
+            <p>Elegant packaging with ribbon</p>
+          </div>
+          <span class="card-price">+$5.00</span>
+        </div>
+      </label>
+    </div>
+    
+    <div class="checkbox-group">
+      <input type="checkbox" id="hide-prices">
+      <label for="hide-prices">Hide prices on packing slip</label>
+    </div>
+  </div>
+</div>
+Step 5: Payment Information
+html<div class="checkout-section">
+  <h2 class="section-title">Payment Method</h2>
+  
+  <div class="payment-method-selector">
+    <button class="payment-tab active" data-method="card">
+      <svg><!-- credit card icon --></svg>
+      Credit / Debit Card
+    </button>
+    <button class="payment-tab" data-method="paypal">
+      <svg><!-- PayPal icon --></svg>
+      PayPal
+    </button>
+    <button class="payment-tab" data-method="applepay">
+      <svg><!-- Apple Pay icon --></svg>
+      Apple Pay
+    </button>
+  </div>
+  
+  <div class="payment-form" data-payment="card">
+    <!-- Stripe Elements Container -->
+    <div id="card-element" class="stripe-element"></div>
+    <div id="card-errors" class="payment-errors"></div>
+    
+    <div class="form-group">
+      <label for="cardholder-name">Cardholder Name</label>
+      <input type="text" id="cardholder-name" placeholder="John Doe" required>
+    </div>
+    
+    <div class="checkbox-group">
+      <input type="checkbox" id="save-payment">
+      <label for="save-payment">
+        <svg>🔒</svg>
+        Securely save this card for faster checkout next time
+      </label>
+    </div>
+    
+    <div class="billing-address-section">
+      <div class="section-header-collapsible">
+        <h3>Billing Address</h3>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="billing-same-as-shipping" checked>
+          Same as shipping address
+        </label>
+      </div>
+      
+      <div class="billing-form" style="display: none;">
+        <!-- Same form fields as shipping -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="payment-form" data-payment="paypal" style="display: none;">
+    <div id="paypal-button-container"></div>
+    <p class="payment-disclaimer">You'll be redirected to PayPal to complete your purchase securely.</p>
+  </div>
+  
+  <div class="payment-form" data-payment="applepay" style="display: none;">
+    <div id="apple-pay-button"></div>
+  </div>
+</div>
+Stripe Integration:
+javascriptconst stripe = Stripe('pk_live_xxxxx');
+const elements = stripe.elements();
+
+const cardElement = elements.create('card', {
+  style: {
+    base: {
+      fontSize: '16px',
+      color: '#1C1C1C',
+      fontFamily: 'Montserrat, sans-serif',
+      '::placeholder': {
+        color: '#6B6B6B',
+      },
+    },
+    invalid: {
+      color: '#F44336',
+    },
+  },
+});
+
+cardElement.mount('#card-element');
+
+cardElement.on('change', (event) => {
+  const displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+});
+Order Review Sidebar (Sticky):
+html<aside class="order-review-sidebar">
+  <div class="sidebar-header">
+    <h3>Order Summary</h3>
+    <button class="toggle-summary">
+      <span class="item-count">3 items</span>
+      <svg class="chevron">▼</svg>
+    </button>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="order-items">
+      <div class="mini-cart-item">
+        <img src="product-thumb.jpg" alt="">
+        <div class="item-info">
+          <p class="item-name">Ethiopian Yirgacheffe</p>
+          <p class="item-variant">Medium • Whole Bean</p>
+        </div>
+        <div class="item-quantity">×1</div>
+        <div class="item-price">$24.00</div>
+      </div>
+      <!-- More items -->
+    </div>
+    
+    <div class="promo-code-inline">
+      <input type="text" placeholder="Discount code" id="checkout-promo">
+      <button class="apply-btn">Apply</button>
+    </div>
+    
+    <div class="order-totals">
+      <div class="total-row">
+        <span>Subtotal</span>
+        <span>$72.00</span>
+      </div>
+      <div class="total-row">
+        <span>Shipping</span>
+        <span class="free">FREE</span>
+      </div>
+      <div class="total-row">
+        <span>Tax</span>
+        <span>$6.48</span>
+      </div>
+      <div class="total-row discount">
+        <span>Discount (WELCOME10)</span>
+        <span>-$7.20</span>
+      </div>
+      <div class="total-row grand-total">
+        <span>Total</span>
+        <span class="amount">$71.28</span>
+      </div>
+    </div>
+    
+    <button class="place-order-btn" id="submit-payment">
+      <span>Place Order</span>
+      <svg class="lock-icon">🔒</svg>
+    </button>
+    
+    <div class="security-badges">
+      <img src="ssl-secure.svg" alt="SSL Secure">
+      <img src="pci-compliant.svg" alt="PCI Compliant">
+    </div>
+    
+    <p class="terms-agreement">
+      By placing your order, you agree to our 
+      <a href="/terms">Terms of Service</a> and 
+      <a href="/privacy">Privacy Policy</a>.
+    </p>
+  </div>
+</aside>
+Place Order Flow:
+
+Click "Place Order" → Button shows loading spinner
+Stripe createPaymentMethod() called
+Backend createPaymentIntent
+Confirm payment with Stripe
+If successful → redirect to /order-confirmation/[orderNumber]
+If failed → show error message inline
+
+
+🛠️ COMPLETE TECH STACK
+FRONTEND
+Core Framework & Build Tools
+json{
+  "react": "^18.2.0",
+  "vite": "^5.0.0",
+  "typescript": "^5.3.0"
+}
+UI & Styling
+json{
+  "tailwindcss": "^3.4.0",
+  "@tailwindcss/typography": "^0.5.10",
+  "@tailwindcss/forms": "^0.5.7",
+  "@tailwindcss/aspect-ratio": "^0.4.2",
+  "autoprefixer": "^10.4.16",
+  "postcss": "^8.4.32",
+  
+  "@radix-ui/react-accordion": "^1.1.2",
+  "@radix-ui/react-dialog": "^1.0.5",
+  "@radix-ui/react-dropdown-menu": "^2.0.6",
+  "@radix-ui/react-popover": "^1.0.7",
+  "@radix-ui/react-select": "^2.0.0",
+  "@radix-ui/react-slider": "^1.1.2",
+  "@radix-ui/react-tabs": "^1.0.4",
+  "@radix-ui/react-toast": "^1.1.5",
+  "@radix-ui/react-tooltip": "^1.0.7",
+  
+  "class-variance-authority": "^0.7.0",
+  "clsx": "^2.0.0",
+  "tailwind-merge": "^2.2.0",
+  "lucide-react": "^0.300.0"
+}
+Animation & Interactions
+json{
+  "framer-motion": "^10.18.0",
+  "lenis": "^1.0.42",
+  "@studio-freight/lenis": "^1.0.29",
+  "gsap": "^3.12.4",
+  "@gsap/react": "^2.0.2",
+  "locomotive-scroll": "^4.1.4",
+  "swiper": "^11.0.5",
+  "embla-carousel-react": "^8.0.0",
+  "react-spring": "^9.7.3"
+}
+State Management
+json{
+  "zustand": "^4.4.7",
+  "@tanstack/react-query": "^5.17.0",
+  "@tanstack/react-query-devtools": "^5.17.0",
+  "immer": "^10.0.3"
+}
+Forms & Validation
+json{
+  "react-hook-form": "^7.49.2",
+  "zod": "^3.22.4",
+  "@hookform/resolvers": "^3.3.3"
+}
+Image Handling
+json{
+  "react-image-lightbox": "^5.1.4",
+  "react-photo-view": "^1.2.4",
+  "react-medium-image-zoom": "^5.1.8",
+  "browser-image-compression": "^2.0.2",
+  "react-lazy-load-image-component": "^1.6.0"
+}
+Advanced Features
+json{
+  "three": "^0.160.0",
+  "@react-three/fiber": "^8.15.12",
+  "@react-three/drei": "^9.92.7",
+  "react-webcam": "^7.2.0",
+  "react-confetti": "^6.1.0",
+  "react-countdown": "^2.3.5",
+  "react-hot-toast": "^2.4.1",
+  "react-helmet-async": "^2.0.4"
+}
+Utilities
+json{
+  "axios": "^1.6.2",
+  "date-fns": "^3.0.6",
+  "lodash-es": "^4.17.21",
+  "nanoid": "^5.0.4",
+  "react-share": "^5.1.0",
+  "copy-to-clipboard": "^3.3.3"
+}
+BACKEND
+Core
+json{
+  "node": "20.x",
+  "express": "^4.18.2",
+  "typescript": "^5.3.0",
+  "@types/node": "^20.10.6",
+  "@types/express": "^4.17.21"
+}
+Database
+json{
+  "mongoose": "^8.0.3",
+  "@typegoose/typegoose": "^12.0.0",
+  "mongodb": "^6.3.0"
+}
+Authentication & Security
+json{
+  "jsonwebtoken": "^9.0.2",
+  "@types/jsonwebtoken": "^9.0.5",
+  "bcryptjs": "^2.4.3",
+  "@types/bcryptjs": "^2.4.6",
+  "express-rate-limit": "^7.1.5",
+  "helmet": "^7.1.0",
+  "cors": "^2.8.5",
+  "@types/cors": "^2.8.17",
+  "express-validator": "^7.0.1",
+  "xss-clean": "^0.1.4",
+  "express-mongo-sanitize": "^2.2.0"
+}
+File Upload & Processing
+json{
+  "multer": "^1.4.5-lts.1",
+  "@types/multer": "^1.4.11",
+  "cloudinary": "^1.41.1",
+  "sharp": "^0.33.1",
+  "pdf-lib": "^1.17.1"
+}
+Payment Processing
+json{
+  "stripe": "^14.10.0",
+  "@stripe/stripe-js": "^2.3.0",
+  "@stripe/react-stripe-js": "^2.4.0"
+}
+Email
+json{
+  "nodemailer": "^6.9.7",
+  "@types/nodemailer": "^6.4.14",
+  "handlebars": "^4.7.8",
+  "mjml": "^4.14.1"
+}
+Utilities
+json{
+  "dotenv": "^16.3.1",
+  "morgan": "^1.10.0",
+  "@types/morgan": "^1.9.9",
+  "compression": "^1.7.4",
+  "@types/compression": "^1.7.5",
+  "cookie-parser": "^1.4.6",
+  "@types/cookie-parser": "^1.4.6",
+  "express-async-handler": "^1.2.0",
+  "slugify": "^1.6.6",
+  "validator": "^13.11.0"
+}
+DEPLOYMENT & DEVOPS
+json{
+  "vercel": "Free tier - Frontend",
+  "render": "Free tier - Backend",
+  "mongodb-atlas": "M0 Free tier - Database",
+  "cloudinary": "Free tier - Media storage",
+  "stripe": "Test mode - Payments"
+}
+DEVELOPMENT TOOLS
+json{
+  "eslint": "^8.56.0",
+  "prettier": "^3.1.1",
+  "@typescript-eslint/eslint-plugin": "^6.17.0",
+  "@typescript-eslint/parser": "^6.17.0",
+  "husky": "^8.0.3",
+  "lint-staged": "^15.2.0",
+  "concurrently": "^8.2.2",
+  "nodemon": "^3.0.2"
+}
+
+📋 ADDITIONAL FEATURES SPECIFIC TO ADACHI DESIGN
+1. Smooth Scroll Animations (Lenis + GSAP)
+Implementation:
+javascriptimport Lenis from '@studio-freight/lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Initialize smooth scroll
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  orientation: 'vertical',
+  gestureOrientation: 'vertical',
+  smoothWheel: true,
+  wheelMultiplier: 1,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// Sync with ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+Scroll-triggered Animations:
+javascript// Fade in elements on scroll
+gsap.utils.toArray('.fade-in').forEach((element) => {
+  gsap.fromTo(element,
+    {
+      opacity: 0,
+      y: 60,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 85%',
+        end: 'top 65%',
+        scrub: false,
+        once: true,
+      },
+    }
+  );
+});
+
+// Parallax effect on images
+gsap.utils.toArray('.parallax-image').forEach((image) => {
+  gsap.to(image, {
+    yPercent: 30,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: image,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: 1,
+    },
+  });
+});
+
+// Text reveal animation
+gsap.utils.toArray('.reveal-text').forEach((text) => {
+  const chars = text.textContent.split('');
+  text.innerHTML = chars.map(char => `<span class="char">${char}</span>`).join('');
+  
+  gsap.fromTo(text.querySelectorAll('.char'),
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.03,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: text,
+        start: 'top 80%',
+      },
+    }
+  );
+});
+2. Magnetic Cursor Effect
+javascriptconst cursor = document.createElement('div');
+cursor.className = 'custom-cursor';
+document.body.appendChild(cursor);
+
+const cursorFollower = document.createElement('div');
+cursorFollower.className = 'cursor-follower';
+document.body.appendChild(cursorFollower);
+
+let mouseX = 0, mouseY = 0;
+let followerX = 0, followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  
+  cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+});
+
+// Smooth follower with GSAP
+gsap.ticker.add(() => {
+  followerX += (mouseX - followerX) * 0.1;
+  followerY += (mouseY - followerY) * 0.1;
+  
+  cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
+});
+
+// Magnetic effect on buttons
+document.querySelectorAll('.magnetic-btn').forEach((btn) => {
+  btn.addEventListener('mouseContinue1:06 pmmove', (e) => {
+const rect = btn.getBoundingClientRect();
+const centerX = rect.left + rect.width / 2;
+const centerY = rect.top + rect.height / 2;
+const deltaX = (e.clientX - centerX) * 0.3;
+const deltaY = (e.clientY - centerY) * 0.3;
+
+gsap.to(btn, {
+  x: deltaX,
+  y: deltaY,
+  duration: 0.3,
+  ease: 'power2.out',
+});
+});
+btn.addEventListener('mouseleave', () => {
+gsap.to(btn, {
+x: 0,
+y: 0,
+duration: 0.5,
+ease: 'elastic.out(1, 0.3)',
+});
+});
+});
+// Expand cursor on interactive elements
+document.querySelectorAll('a, button, .clickable').forEach((el) => {
+el.addEventListener('mouseenter', () => {
+cursor.classList.add('cursor-expanded');
+cursorFollower.classList.add('follower-expanded');
+});
+el.addEventListener('mouseleave', () => {
+cursor.classList.remove('cursor-expanded');
+cursorFollower.classList.remove('follower-expanded');
+});
+});
+
+**CSS:**
+```css
+.custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--primary-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+.cursor-expanded {
+  width: 60px;
+  height: 60px;
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.follower-expanded {
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  .custom-cursor,
+  .cursor-follower {
+    display: none;
+  }
+}
+```
+
+### **3. Page Transitions**
+
+**Using Framer Motion:**
+```jsx
+// App.jsx
+import { AnimatePresence, motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.6, 0.01, 0.05, 0.95],
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: {
+      duration: 0.4,
+      ease: [0.6, 0.01, 0.05, 0.95],
+    },
+  },
+};
+
+function App() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        variants={pageVariants}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+      >
+        <Routes location={location}>
+          {/* Routes */}
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+```
+
+**Page Loader:**
+```jsx
+const PageLoader = () => {
+  return (
+    <motion.div
+      className="page-loader"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        className="loader-logo"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
+      >
+        <img src="/logo.svg" alt="ARTISIO" />
+      </motion.div>
+    </motion.div>
+  );
+};
+```
+
+### **4. Image Reveal Animations**
+
+**Mask Reveal Effect:**
+```jsx
+const ImageReveal = ({ src, alt }) => {
+  const ref = useRef(null);
+  
+  useEffect(() => {
+    const element = ref.current;
+    
+    gsap.fromTo(element.querySelector('.image-mask'),
+      {
+        scaleY: 1,
+        transformOrigin: 'top',
+      },
+      {
+        scaleY: 0,
+        duration: 1.2,
+        ease: 'power3.inOut',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%',
+        },
+      }
+    );
+    
+    gsap.fromTo(element.querySelector('img'),
+      {
+        scale: 1.3,
+      },
+      {
+        scale: 1,
+        duration: 1.2,
+        ease: 'power3.inOut',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%',
+        },
+      }
+    );
+  }, []);
+  
+  return (
+    <div ref={ref} className="image-reveal-container">
+      <div className="image-mask"></div>
+      <img src={src} alt={alt} />
+    </div>
+  );
+};
+```
+
+**CSS:**
+```css
+.image-reveal-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-dark);
+  z-index: 2;
+}
+
+.image-reveal-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+```
+
+### **5. Horizontal Scroll Gallery**
+```jsx
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const HorizontalGallery = ({ products }) => {
+  const containerRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+  
+  useEffect(() => {
+    const container = containerRef.current;
+    const scrollContainer = scrollContainerRef.current;
+    
+    const scrollWidth = scrollContainer.scrollWidth - window.innerWidth;
+    
+    gsap.to(scrollContainer, {
+      x: -scrollWidth,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: container,
+        start: 'top top',
+        end: () => `+=${scrollWidth}`,
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [products]);
+  
+  return (
+    <div ref={containerRef} className="horizontal-gallery">
+      <div ref={scrollContainerRef} className="gallery-track">
+        {products.map((product, index) => (
+          <div key={product.id} className="gallery-item">
+            <img src={product.image} alt={product.name} />
+            <div className="item-info">
+              <h3>{product.name}</h3>
+              <p>${product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+```
+
+**CSS:**
+```css
+.horizontal-gallery {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 3rem;
+  will-change: transform;
+}
+
+.gallery-item {
+  flex-shrink: 0;
+  width: 400px;
+  height: 80vh;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+```
+
+### **6. Menu Overlay Animation (Adachi-style)**
+```jsx
+const MenuOverlay = ({ isOpen, onClose }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            className="menu-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            onClick={onClose}
+          />
+          
+          <motion.div
+            className="menu-panel"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{
+              duration: 0.6,
+              ease: [0.6, 0.01, 0.05, 0.95],
+            }}
+          >
+            <button className="close-menu" onClick={onClose}>
+              <motion.span
+                className="close-line line-1"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 45 }}
+                transition={{ delay: 0.3 }}
+              />
+              <motion.span
+                className="close-line line-2"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: -45 }}
+                transition={{ delay: 0.3 }}
+              />
+            </button>
+            
+            <nav className="menu-nav">
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: 0.3 + index * 0.1,
+                    duration: 0.6,
+                    ease: [0.6, 0.01, 0.05, 0.95],
+                  }}
+                >
+                  
+                    href={item.href}
+                    className="menu-link"
+                    onClick={onClose}
+                  >
+                    <span className="link-text">{item.label}</span>
+                    <motion.span
+                      className="link-arrow"
+                      initial={{ x: -10, opacity: 0 }}
+                      whileHover={{ x: 0, opacity: 1 }}
+                    >
+                      →
+                    </motion.span>
+                  </a>
+                </motion.div>
+              ))}
+            </nav>
+            
+            <motion.div
+              className="menu-footer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              <div className="social-links">
+                <a href="#instagram">Instagram</a>
+                <a href="#facebook">Facebook</a>
+                <a href="#twitter">Twitter</a>
+              </div>
+            </motion.div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+};
+```
+
+**CSS:**
+```css
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 46, 46, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 998;
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(500px, 100vw);
+  height: 100vh;
+  background: var(--primary-dark);
+  z-index: 999;
+  padding: 3rem;
+  overflow-y: auto;
+}
+
+.menu-nav {
+  margin-top: 6rem;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  color: var(--neutral-white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.menu-link:hover {
+  padding-left: 1rem;
+  color: var(--primary-gold);
+}
+
+.link-arrow {
+  font-size: 2rem;
+}
+```
+
+### **7. Product Quick View Modal**
+```jsx
+const QuickViewModal = ({ product, isOpen, onClose }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="modal-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <motion.div
+            className="quick-view-modal"
+            initial={{ scale: 0.9, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 50 }}
+            transition={{
+              duration: 0.4,
+              ease: [0.6, 0.01, 0.05, 0.95],
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="modal-close" onClick={onClose}>
+              ×
+            </button>
+            
+            <div className="modal-content">
+              <div className="modal-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              
+              <div className="modal-details">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {product.name}
+                </motion.h2>
+                
+                <motion.div
+                  className="modal-price"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  ${product.price}
+                </motion.div>
+                
+                <motion.p
+                  className="modal-description"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {product.description}
+                </motion.p>
+                
+                <motion.div
+                  className="modal-actions"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <button className="add-to-cart-btn">
+                    Add to Cart
+                  </button>
+                  <a href={`/products/${product.slug}`} className="view-details-link">
+                    View Full Details →
+                  </a>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+```
+
+### **8. Add to Cart Animation**
+```jsx
+const addToCart = async (product) => {
+  // 1. Add to cart in state/backend
+  await cartStore.addItem(product);
+  
+  // 2. Visual feedback
+  const button = event.currentTarget;
+  const buttonRect = button.getBoundingClientRect();
+  
+  // Create flying product image
+  const flyingImage = document.createElement('img');
+  flyingImage.src = product.image;
+  flyingImage.className = 'flying-product';
+  flyingImage.style.position = 'fixed';
+  flyingImage.style.left = `${buttonRect.left}px`;
+  flyingImage.style.top = `${buttonRect.top}px`;
+  flyingImage.style.width = '80px';
+  flyingImage.style.height = '80px';
+  flyingImage.style.objectFit = 'cover';
+  flyingImage.style.borderRadius = '8px';
+  flyingImage.style.zIndex = '10000';
+  flyingImage.style.pointerEvents = 'none';
+  
+  document.body.appendChild(flyingImage);
+  
+  // Get cart icon position
+  const cartIcon = document.querySelector('.cart-icon');
+  const cartRect = cartIcon.getBoundingClientRect();
+  
+  // Animate to cart
+  gsap.to(flyingImage, {
+    left: cartRect.left,
+    top: cartRect.top,
+    width: 20,
+    height: 20,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.in',
+    onComplete: () => {
+      flyingImage.remove();
+      
+      // Cart icon bounce
+      gsap.to(cartIcon, {
+        scale: 1.2,
+        duration: 0.2,
+        yoyo: true,
+        repeat: 1,
+      });
+      
+      // Show toast
+      toast.success('Added to cart!', {
+        icon: '🛒',
+        duration: 2000,
+      });
+    },
+  });
+  
+  // Button feedback
+  gsap.timeline()
+    .to(button, {
+      scale: 0.95,
+      duration: 0.1,
+    })
+    .to(button, {
+      scale: 1,
+      duration: 0.2,
+      ease: 'elastic.out(1, 0.3)',
+    });
+};
+```
+
+### **9. Scroll Progress Indicator**
+```jsx
+const ScrollProgress = () => {
+  const [progress, setProgress] = useState(0);
+  
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / scrollHeight) * 100;
+      setProgress(scrolled);
+    };
+    
+    window.addEventListener('scroll', updateProgress);
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+  
+  return (
+    <motion.div
+      className="scroll-progress"
+      style={{ scaleX: progress / 100 }}
+      initial={{ scaleX: 0 }}
+      transition={{ duration: 0.1 }}
+    />
+  );
+};
+```
+
+**CSS:**
+```css
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-gold);
+  transform-origin: left;
+  z-index: 9999;
+}
+```
+
+### **10. Section Transition Dividers**
+```jsx
+const SectionDivider = ({ variant = 'default' }) => {
+  const ref = useRef(null);
+  
+  useEffect(() => {
+    gsap.fromTo(ref.current,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: 1.5,
+        ease: 'power3.inOut',
+        scrollTrigger: {
+          trigger: ref.current,
+          start: 'top 85%',
+        },
+      }
+    );
+  }, []);
+  
+  return (
+    <div className={`section-divider ${variant}`}>
+      <div ref={ref} className="divider-line"></div>
+    </div>
+  );
+};
+```
+
+**CSS:**
+```css
+.section-divider {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider-line {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-gold),
+    transparent
+  );
+  transform-origin: center;
+}
+
+.section-divider.ornate .divider-line {
+  height: 2px;
+  position: relative;
+}
+
+.section-divider.ornate .divider-line::before,
+.section-divider.ornate .divider-line::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-gold);
+  font-size: 0.75rem;
+}
+
+.section-divider.ornate .divider-line::before {
+  left: -1.5rem;
+}
+
+.section-divider.ornate .divider-line::after {
+  right: -1.5rem;
+}
+```
+
+---
+
+## 🎯 FINAL PROJECT STRUCTURE
+artisio/
+│
+├── client/
+│   ├── public/
+│   │   ├── videos/
+│   │   │   └── hero-background.mp4
+│   │   ├── fonts/
+│   │   │   ├── PlayfairDisplay-Bold.woff2
+│   │   │   ├── Cinzel-Regular.woff2
+│   │   │   └── Montserrat-Variable.woff2
+│   │   └── images/
+│   │       └── placeholder.jpg
+│   │
+│   ├── src/
+│   │   ├── animations/
+│   │   │   ├── pageTransitions.js
+│   │   │   ├── scrollAnimations.js
+│   │   │   ├── cursorEffects.js
+│   │   │   └── imageReveal.js
+│   │   │
+│   │   ├── components/
+│   │   │   ├── animations/
+│   │   │   │   ├── FadeIn.jsx
+│   │   │   │   ├── SlideIn.jsx
+│   │   │   │   ├── ImageReveal.jsx
+│   │   │   │   └── TextReveal.jsx
+│   │   │   │
+│   │   │   ├── common/
+│   │   │   │   ├── Button.jsx
+│   │   │   │   ├── Card.jsx
+│   │   │   │   ├── Input.jsx
+│   │   │   │   ├── Modal.jsx
+│   │   │   │   ├── Toast.jsx
+│   │   │   │   └── Loader.jsx
+│   │   │   │
+│   │   │   ├── layout/
+│   │   │   │   ├── Header.jsx
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   ├── MenuOverlay.jsx
+│   │   │   │   ├── CartSidebar.jsx
+│   │   │   │   └── ScrollProgress.jsx
+│   │   │   │
+│   │   │   ├── home/
+│   │   │   │   ├── HeroSection.jsx
+│   │   │   │   ├── FeaturedProducts.jsx
+│   │   │   │   ├── HorizontalGallery.jsx
+│   │   │   │   ├── BrandStory.jsx
+│   │   │   │   ├── CategoryGrid.jsx
+│   │   │   │   ├── InstagramFeed.jsx
+│   │   │   │   └── Newsletter.jsx
+│   │   │   │
+│   │   │   ├── products/
+│   │   │   │   ├── ProductCard.jsx
+│   │   │   │   ├── ProductGrid.jsx
+│   │   │   │   ├── ProductFilters.jsx
+│   │   │   │   ├── ProductDetail.jsx
+│   │   │   │   ├── ImageGallery.jsx
+│   │   │   │   ├── ImageLightbox.jsx
+│   │   │   │   ├── ProductTabs.jsx
+│   │   │   │   ├── ProductReviews.jsx
+│   │   │   │   └── QuickViewModal.jsx
+│   │   │   │
+│   │   │   ├── cart/
+│   │   │   │   ├── CartItem.jsx
+│   │   │   │   ├── CartSummary.jsx
+│   │   │   │   ├── PromoCode.jsx
+│   │   │   │   └── FreeShippingProgress.jsx
+│   │   │   │
+│   │   │   ├── checkout/
+│   │   │   │   ├── CheckoutProgress.jsx
+│   │   │   │   ├── ContactForm.jsx
+│   │   │   │   ├── ShippingForm.jsx
+│   │   │   │   ├── DeliveryOptions.jsx
+│   │   │   │   ├── PaymentForm.jsx
+│   │   │   │   ├── OrderReview.jsx
+│   │   │   │   └── StripeElements.jsx
+│   │   │   │
+│   │   │   └── shared/
+│   │   │       ├── Cursor.jsx
+│   │   │       ├── PageLoader.jsx
+│   │   │       ├── SectionDivider.jsx
+│   │   │       └── ScrollIndicator.jsx
+│   │   │
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useCart.js
+│   │   │   ├── useProducts.js
+│   │   │   ├── useScrollAnimation.js
+│   │   │   ├── useCursor.js
+│   │   │   └── usePageTransition.js
+│   │   │
+│   │   ├── store/
+│   │   │   ├── authStore.js
+│   │   │   ├── cartStore.js
+│   │   │   ├── productStore.js
+│   │   │   └── uiStore.js
+│   │   │
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   ├── animations.css
+│   │   │   ├── typography.css
+│   │   │   └── cursor.css
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── api.js
+│   │   │   ├── animations.js
+│   │   │   ├── formatting.js
+│   │   │   └── validation.js
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Products.jsx
+│   │   │   ├── ProductDetail.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── Checkout.jsx
+│   │   │   └── OrderConfirmation.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── .env.example
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   └── tsconfig.json
+│
+├── server/
+│   ├── config/
+│   ├── models/
+│   ├── controllers/
+│   ├── routes/
+│   ├── middleware/
+│   ├── utils/
+│   ├── .env.example
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── server.ts
+│
+├── docs/
+│   ├── API_DOCUMENTATION.md
+│   ├── DESIGN_SYSTEM.md
+│   ├── ANIMATION_GUIDE.md
+│   └── DEPLOYMENT.md
+│
+└── README.md

@@ -1,0 +1,2091 @@
+ARTISIO - Complete Feature Specification for Antigravity
+PROJECT OVERVIEW
+Project Name: ARTISIO
+Project Type: Full-Stack E-Commerce Platform for Artisan Food & Beverage
+Tech Stack: MERN (MongoDB, Express.js, React, Node.js)
+Deployment: 100% Free (Vercel + Render.com + MongoDB Atlas)
+
+COMPLETE FEATURE LIST FOR ANTIGRAVITY
+🎯 CUSTOMER-FACING FEATURES
+1. HOMEPAGE
+
+Hero section with video/image background and overlay text
+Animated call-to-action buttons (Order Now, Explore)
+Featured products grid (8 products) with hover effects
+Product quick-view on hover
+Categories showcase section with image cards
+"Artisan of the Month" spotlight with bio and featured products
+Customer testimonials carousel with auto-play
+Instagram gallery grid (12 images) with lightbox modal
+Newsletter subscription form with email validation and success message
+Sustainability impact counter (animated numbers showing trees planted, local farms supported)
+Trust badges section (certifications, secure payment, free shipping)
+Footer with navigation links, social media icons, contact info
+
+2. PRODUCT CATALOG PAGE
+
+Grid/list view toggle button
+Product cards showing: image, name, price, rating, quick-add button
+"New" and "Sale" badges on products
+Advanced sidebar filters:
+
+Price range slider with min/max values
+Category checkboxes (multi-select)
+Dietary tags (vegan, gluten-free, organic, sugar-free)
+Origin location dropdown
+Artisan/brand multi-select
+Certifications checkboxes
+In stock / Pre-order toggle
+
+
+Sort dropdown (Price low-high, Price high-low, Newest, Best sellers, Rating, A-Z)
+Search bar with real-time suggestions and debouncing
+Active filters display with remove button for each
+Clear all filters button
+Pagination with page numbers and next/prev buttons
+Products count display (Showing 1-12 of 145 products)
+Infinite scroll option (load more button)
+Recently viewed products sidebar
+
+3. PRODUCT DETAIL PAGE
+
+Main product image with zoom on hover/click
+Image gallery thumbnails (5-8 images) with click to view
+360° product viewer (optional)
+Product name, SKU, brand/artisan name
+Star rating with review count (clickable to scroll to reviews)
+Current price, regular price (struck through if on sale), member price badge
+Stock availability indicator (In Stock, Low Stock, Out of Stock, Pre-order)
+"Story Behind the Product" expandable section with:
+
+Artisan profile with photo and bio
+Origin story with timeline
+Making process with step-by-step photos
+Sustainability practices with impact metrics
+
+
+Ingredients/materials list with allergen warnings highlighted
+Nutritional information table (for food products)
+Size/weight/variant selector (dropdown or buttons)
+Quantity selector with +/- buttons and stock validation
+Add to cart button with loading state and success animation
+Add to wishlist heart icon (filled if already in wishlist)
+Social share buttons (Facebook, Twitter, Pinterest, WhatsApp, Copy Link)
+"Pairs well with" product recommendations (4 products)
+Product tabs: Description, Reviews, Q&A, Shipping Info
+Customer reviews section with:
+
+Average rating display
+Rating breakdown (5 stars: 70%, 4 stars: 20%, etc.)
+Sort reviews (Most recent, Highest rated, Lowest rated, Most helpful)
+Individual review cards with: user name, date, rating, title, comment, helpful count, "Was this helpful?" buttons
+Review photos lightbox
+"Write a review" button
+
+
+Q&A section with ask question button
+Gift wrapping checkbox with preview image
+Personalized gift message textarea
+
+4. SHOPPING CART
+
+Cart sidebar that slides from right on cart icon click
+Cart items list showing: thumbnail, name, price, variant, quantity, subtotal
+Quantity update buttons (+/-) with instant price recalculation
+Remove item button with confirmation
+"Save for later" button moving item to wishlist
+Empty cart state with "Continue shopping" button
+Promo code input field with "Apply" button and validation
+Gift card redemption field
+Subtotal, discount, estimated tax, shipping, total breakdown
+Free shipping progress bar (e.g., "Add $15 more for free shipping")
+Suggested add-ons section (3 products)
+Continue shopping button
+Checkout button (disabled if cart empty)
+Cart item count badge on header cart icon
+Persistent cart (saved to database/localStorage for 30 days)
+
+5. CHECKOUT FLOW
+Step 1: Contact Information
+
+Email input with validation (required)
+Phone number input (optional but recommended)
+"Create an account" checkbox for guest checkout
+Password fields (if creating account)
+Continue as guest button
+"Already have an account? Login" link
+
+Step 2: Delivery Details
+
+Delivery type selector with radio buttons:
+
+Standard delivery (3-5 days) - Free over $50
+Express delivery (1-2 days) - $15
+Local pickup (same day) - Free
+Subscription delivery (monthly/quarterly)
+
+
+Shipping address form with:
+
+Address autocomplete using Google Places API
+Street address (required)
+Apartment/Suite (optional)
+City (required, auto-filled)
+State (dropdown, auto-filled)
+Postal code (required, auto-filled)
+Country (dropdown, auto-filled)
+"Save this address" checkbox
+"Set as default address" checkbox
+
+
+Saved addresses dropdown (for logged-in users)
+Delivery date picker (calendar widget)
+Delivery time slot selector (Morning 9-12, Afternoon 12-3, Evening 3-6)
+Special delivery instructions textarea
+"This is a gift" checkbox revealing:
+
+Gift message textarea (200 char limit)
+Gift wrapping option ($5)
+Gift receipt option
+
+
+Order summary sidebar showing all items and pricing
+
+Step 3: Payment
+
+Stripe Elements card input (card number, expiry, CVC)
+Apple Pay / Google Pay buttons
+"Save card for future purchases" checkbox
+Billing address selector (same as shipping / different address)
+Order review section with all details
+Promo code applied display
+Final total with tax breakdown
+Terms & conditions checkbox (required)
+Privacy policy link
+Secure checkout badges
+Place order button with loading spinner
+Payment error handling with clear messages
+
+6. ORDER CONFIRMATION PAGE
+
+Success checkmark animation
+Order number prominently displayed
+Thank you message
+Order summary table (items, quantities, prices)
+Delivery information (address, estimated date)
+Total paid
+Payment method (last 4 digits of card)
+"Email confirmation sent to [email]" message
+Download invoice button (generates PDF)
+Track your order button (links to tracking page)
+Create account prompt (if guest checkout)
+Share your purchase on social media buttons
+"Continue shopping" button
+Related products recommendations
+
+7. ORDER TRACKING PAGE
+
+Order number input with search button
+Order status timeline with visual progress:
+
+Order placed (checkmark)
+Order confirmed (checkmark)
+Preparing your order (current)
+Shipped (pending)
+Out for delivery (pending)
+Delivered (pending)
+
+
+Estimated delivery date countdown
+Tracking number with carrier link
+Real-time status updates
+Order items list
+Delivery address
+Contact support button
+"Report a problem" link
+
+8. USER ACCOUNT PORTAL
+Registration/Login
+
+Registration form: email, password, confirm password, first name, last name
+Email verification required (6-digit code sent)
+Social login buttons (Google, Facebook)
+Login form with "Remember me" checkbox
+Forgot password link (email reset)
+Password strength indicator on registration
+
+Dashboard
+
+Welcome message with user name
+Quick stats cards: Total orders, Active subscriptions, Loyalty points, Wishlist items
+Recent orders table (last 5) with: order number, date, total, status, view button
+Recommended products based on purchase history
+
+Order History
+
+All orders table with columns: Order #, Date, Items, Total, Status, Actions
+Filter by: Date range, Status, Payment status
+Search by order number
+Order detail view button opening modal with full order info
+Reorder button copying items to cart
+Download invoice button for each order
+Track order button
+
+Saved Addresses
+
+Address cards showing: Label, Full address, Default badge
+Add new address button
+Edit address button
+Delete address button (with confirmation)
+Set as default button
+
+Payment Methods
+
+Saved cards list showing: Card brand icon, Last 4 digits, Expiry, Default badge
+Add new card button
+Remove card button (with confirmation)
+Set as default button
+
+Wishlist
+
+Product grid view of saved items
+Remove from wishlist button
+Add to cart button
+Stock availability indicator
+Price change notification (if item on sale)
+Empty wishlist state
+
+Loyalty Program Dashboard
+
+Current points balance (large display)
+Points to next tier progress bar
+Current tier badge (Bronze/Silver/Gold)
+Points history table: Date, Action, Points earned/redeemed
+Available rewards catalog with: Reward name, Points required, Redeem button
+Tier benefits list
+Referral link with copy button
+Referral earnings tracker
+
+Subscription Management
+
+Active subscription card showing: Tier, Price, Next delivery date
+Subscription preferences edit button
+Skip next delivery button
+Pause subscription button
+Cancel subscription button (with retention flow)
+Delivery history table
+Swap products before next delivery option
+Upgrade/downgrade tier button
+
+Profile Settings
+
+Personal information form: First name, Last name, Phone, Avatar upload
+Email change (requires verification)
+Password change (current password + new password)
+Preferences: Dietary restrictions, Allergens, Favorite categories
+Notification settings: Email marketing, Order updates, SMS notifications
+Language & currency selector
+Delete account button (with confirmation and reason selection)
+
+9. SUBSCRIPTION BOX FEATURE
+Subscription Landing Page
+
+Hero section explaining subscription benefits
+Tier comparison table:
+
+Starter ($29/month): 4-5 products, free shipping
+Connoisseur ($49/month): 7-8 products, exclusive items, free shipping
+Collector ($89/month): 12+ products, rare items, priority support, free shipping
+
+
+How it works section (3 steps with icons)
+Sample box preview for each tier
+Customer testimonials specific to subscriptions
+FAQ accordion section
+Subscribe now button for each tier
+
+Subscription Onboarding Quiz
+
+Multi-step questionnaire:
+
+Coffee or tea preference?
+Sweet or savory?
+Adventurous or classic tastes?
+Dietary restrictions checkboxes
+Flavor intensity scale
+Product categories to avoid
+
+
+Progress bar showing quiz completion
+Personalized recommendation based on quiz results
+Tier suggestion with reasoning
+
+Subscription Dashboard (in user account)
+
+Next box preview (5 days before shipping)
+Product swap interface: Remove products, Browse alternatives, Add replacements
+Skip this month button
+Subscription pause option (up to 3 months)
+Delivery address for subscription
+Billing information
+Subscription gifts sent tracker
+Surprise me toggle (no preview, full surprise box)
+
+10. ARTISAN STORIES SECTION
+Meet the Makers Page
+
+Artisan grid with profile cards: Photo, Name, Location, Specialty, View Profile button
+Filter by: Location, Specialty, Certification
+Search artisans by name
+
+Individual Artisan Profile Page
+
+Hero image/video of artisan at work
+Artisan photo and bio
+Location map showing origin
+Certifications and awards display
+Sustainability practices section
+Products by this artisan grid
+Behind-the-scenes photo gallery
+Workshop/event calendar if applicable
+Social media links
+Follow artisan button
+Direct tip/support button (Stripe donation)
+
+Blog/Stories Section
+
+Blog post grid with: Featured image, Title, Excerpt, Author, Date, Read more
+Categories filter sidebar
+Search blog posts
+Featured post at top
+Subscribe to blog newsletter form
+
+Individual Blog Post
+
+Featured image
+Title, Author, Date
+Reading time estimate
+Content (rich text with images, videos, quotes)
+Related products sidebar
+Share buttons
+Author bio box
+Related posts section
+Comments section with reply functionality
+Comment form (name, email, comment)
+
+11. GIFT SERVICES
+Gift Cards Page
+
+Preset amount buttons ($25, $50, $100, $150, $200)
+Custom amount input
+Recipient email input
+Recipient name input
+Personal message textarea
+Send date picker (send now or schedule)
+Preview gift card design
+Add to cart button
+
+Gift Card Balance Check
+
+Gift card number input
+Check balance button
+Balance display
+Apply to order button
+
+Corporate Gifting Page
+
+Bulk order form: Company name, Contact person, Email, Phone, Quantity needed
+Custom branding option
+Volume discount calculator
+Request quote button
+Sample box request form
+
+12. SEARCH FUNCTIONALITY
+
+Global search bar in header
+Real-time search suggestions dropdown showing:
+
+Top products (with thumbnail)
+Categories
+Artisans
+Blog posts
+
+
+Advanced search page with filters
+Search history (for logged-in users)
+Popular searches section
+No results state with suggestions
+
+13. CUSTOMER SUPPORT
+FAQ Page
+
+Searchable FAQ with categories
+Accordion-style questions
+Categories: Ordering, Shipping, Returns, Subscription, Payments, Account
+"Was this helpful?" buttons
+Contact support if FAQ doesn't help
+
+Contact Us Page
+
+Contact form: Name, Email, Subject, Message
+File attachment option
+Expected response time display
+Alternative contact methods: Email, Phone, Live chat
+Store location map
+Operating hours
+
+Live Chat Widget (Tawk.to integration)
+
+Chat bubble in bottom right
+Online/offline status
+Quick replies for common questions
+File sharing capability
+Chat transcript email option
+
+Return/Refund Request
+
+Order selection from dropdown
+Item selection checkboxes
+Reason for return dropdown
+Additional comments textarea
+Photo upload (product condition)
+Refund preference (original payment method / store credit)
+Submit request button
+
+
+🔧 ADMIN DASHBOARD FEATURES
+1. ADMIN LOGIN & SECURITY
+
+Secure login page (email + password)
+Two-factor authentication (2FA) setup and verification
+Remember device option
+Session timeout after 30 minutes inactivity
+Password strength requirements
+Password reset via email
+Activity log tracking all admin actions
+
+2. DASHBOARD OVERVIEW
+
+Today's key metrics cards:
+
+Total revenue (with % change from yesterday)
+Orders count (with % change)
+New customers (with % change)
+Conversion rate (with % change)
+Average order value
+
+
+Revenue chart (line/bar chart) with date range selector (Today, Week, Month, Year, Custom)
+Sales by category pie chart
+Top 5 selling products list with thumbnail, name, quantity sold, revenue
+Top 5 customers list with name, total orders, total spent
+Recent orders table (last 10) with quick status update
+Low stock alerts (products with stock < threshold)
+Pending reviews count with link
+Upcoming subscription deliveries count
+Quick action buttons: Add Product, Create Promo Code, View Orders
+
+3. ORDER MANAGEMENT
+Orders List Page
+
+Orders table with columns:
+
+Order number (clickable)
+Customer name (clickable to customer profile)
+Email
+Date & time
+Items count
+Total amount
+Payment status badge
+Order status badge
+Quick actions dropdown
+
+
+Column sorting (click headers)
+Filters sidebar:
+
+Date range picker
+Status multi-select
+Payment status
+Delivery type
+Amount range
+Customer search
+
+
+Search by order number or customer email
+Bulk actions:
+
+Export selected to CSV
+Print packing slips
+Update status (dropdown)
+Mark as shipped (with tracking number input)
+Send tracking email
+Delete orders (with confirmation)
+
+
+Pagination with items per page selector
+
+Order Detail View (modal or separate page)
+
+Order header: Order number, Date, Status badges
+Customer information card:
+
+Name, Email, Phone
+Total orders count
+Lifetime value
+View customer profile button
+
+
+Order items table: Product, SKU, Quantity, Price, Subtotal
+Pricing breakdown: Subtotal, Discount, Shipping, Tax, Total
+Payment information: Method, Transaction ID, Status, Date paid
+Delivery information: Type, Address, Tracking number, Estimated date
+Gift details (if applicable): Message, Wrapping
+Internal notes textarea (admin only)
+Customer notes display
+Order timeline showing status changes with timestamp and admin name
+Action buttons:
+
+Update status dropdown
+Print invoice
+Print packing slip
+Send tracking email
+Refund order (opens refund modal)
+Cancel order (with reason)
+Email customer
+
+
+
+Create Manual Order
+
+Customer selector (existing or create new)
+Product search and add to order
+Quantity selector for each product
+Discount input (%, $ or promo code)
+Shipping method selector
+Payment method selector
+Mark as paid checkbox
+Send confirmation email checkbox
+Create order button
+
+4. PRODUCT MANAGEMENT
+Products List Page
+
+Products table with columns:
+
+Checkbox for bulk selection
+Thumbnail image
+Name (clickable to edit)
+SKU
+Category
+Price
+Stock quantity
+Status badge (Published, Draft, Archived)
+Featured star icon
+Actions dropdown (Edit, Duplicate, Delete)
+
+
+Filters:
+
+Category dropdown
+Status dropdown
+Stock status (In stock, Low stock, Out of stock)
+Featured toggle
+Price range
+
+
+Search by name or SKU
+Sort by: Name, Price, Stock, Date created
+Bulk actions:
+
+Delete selected
+Change category
+Change status
+Update prices (percentage or fixed amount)
+Export to CSV
+Import from CSV (with template download)
+
+
+Add product button
+Total products count display
+
+Add/Edit Product Form (multi-tab layout)
+Tab 1: Basic Information
+
+Product name input (required)
+SKU input (auto-generate button option)
+Category dropdown (required)
+Subcategory dropdown (dependent on category)
+Brand/Artisan dropdown
+Short description textarea (150 chars, shows on cards)
+Full description rich text editor with:
+
+Bold, italic, underline
+Headings, lists
+Link insertion
+Image insertion
+HTML view toggle
+
+
+Tags input (multi-tag with autocomplete)
+Status radio buttons (Draft, Published, Archived)
+Featured product checkbox
+Publish date picker (schedule publishing)
+
+Tab 2: Pricing & Inventory
+
+Regular price input (required, with currency symbol)
+Sale price input (optional)
+Member price input (optional)
+Cost price input (for profit margin calculation, shown as %)
+Track inventory toggle
+Stock quantity input
+Low stock threshold input
+Allow backorder toggle
+SKU management (if variants exist)
+Weight input (with unit selector: g, kg, oz, lb)
+Dimensions inputs: Length, Width, Height (with unit selector)
+
+Tab 3: Images & Media
+
+Drag-and-drop image upload zone
+Upload progress bar
+Image preview grid with:
+
+Drag to reorder
+Set as featured button
+Edit alt text button
+Delete button
+
+
+Maximum 10 images
+Recommended size display (1200x1200px)
+Video URL input (YouTube/Vimeo embed)
+
+Tab 4: Variants (for products with options)
+
+Add variant button
+Variant name input (e.g., "Size")
+Variant values input (e.g., "Small, Medium, Large")
+Generate combinations button
+Combinations table showing:
+
+Variant combination (e.g., "Small / Blue")
+SKU
+Price
+Stock
+Image
+Enabled checkbox
+
+
+Bulk update variant prices
+
+Tab 5: Attributes
+
+Ingredients textarea (one per line)
+Nutritional information fields:
+
+Serving size
+Calories
+Fat, Carbs, Protein, etc.
+
+
+Allergens checkboxes (Dairy, Nuts, Gluten, Soy, Eggs, etc.)
+Dietary tags checkboxes (Vegan, Vegetarian, Organic, Gluten-free, Fair-trade, etc.)
+Certifications checkboxes (USDA Organic, Fair Trade, Non-GMO, etc.)
+Origin country dropdown
+Shelf life input
+Storage instructions textarea
+
+Tab 6: Artisan Story
+
+Artisan profile rich text editor
+Making process rich text editor
+Sustainability practices rich text editor
+Heritage/background rich text editor
+Upload story images (up to 5)
+Story video URL input
+
+Tab 7: Shipping
+
+Requires shipping toggle
+Fragile item checkbox
+Ships separately checkbox
+Shipping class dropdown (if using shipping classes)
+
+Tab 8: SEO
+
+Meta title input (60 chars max, counter shown)
+Meta description textarea (160 chars max, counter shown)
+URL slug input (auto-generated from name, editable)
+Focus keyword input
+SEO preview display
+
+Save buttons:
+
+Save draft button
+Publish button
+Save and add another button
+
+Product Duplication
+
+Duplicate button creates copy with "(Copy)" appended
+All data copied except SKU
+Opens in edit mode
+
+5. CATEGORY MANAGEMENT
+Categories Page
+
+Tree view showing category hierarchy
+Drag-and-drop to reorder or nest categories
+Category list showing: Name, Slug, Products count, Order, Actions
+Add category button
+
+Add/Edit Category Modal
+
+Category name input (required)
+Slug input (auto-generated, editable)
+Parent category dropdown (to create subcategory)
+Description textarea
+Category image upload
+Icon selector (from icon library or upload SVG)
+Display order input
+Show on homepage checkbox
+Meta title input
+Meta description textarea
+Save category button
+
+Delete Category
+
+Confirmation modal
+Option to: Delete category only, Delete category and products, Reassign products to another category
+
+6. ARTISAN/BRAND MANAGEMENT
+Artisans List Page
+
+Artisan cards grid showing: Logo, Name, Location, Products count, Status, Actions
+Add artisan button
+Search artisans by name
+
+Add/Edit Artisan Form
+
+Business name input (required)
+Owner name input
+Logo upload (square, 500x500px)
+Cover image upload (wide, 1920x600px)
+Bio rich text editor
+Story/heritage rich text editor
+Location fields: Address, City, State, Country
+Coordinates inputs (latitude, longitude) for map
+Contact information: Email, Phone, Website
+Social media: Instagram, Facebook, Twitter, YouTube handles
+Certifications checkboxes
+Sustainability practices textarea
+Featured artisan checkbox
+Status radio (Active, Inactive)
+Save artisan button
+
+Artisan Detail View
+
+Profile summary
+Products by this artisan list
+Total sales for this artisan
+Average product rating
+Edit artisan button
+
+7. CUSTOMER MANAGEMENT
+Customers List Page
+
+Customers table with columns:
+
+Name (clickable to profile)
+Email
+Phone
+Registration date
+Total orders
+Total spent
+Loyalty points
+Status (Active, Inactive)
+Actions
+
+
+Filters:
+
+Registration date range
+Order count range
+Total spent range
+Loyalty tier
+Has subscription
+
+
+Search by name, email, or phone
+Customer segments:
+
+VIP (>$500 spent)
+Active (order in last 30 days)
+Inactive (no order in 90 days)
+New (first order in last 7 days)
+Subscribers
+
+
+Bulk actions: Export to CSV, Send email campaign
+Add customer button (manual customer creation)
+
+Customer Detail Page
+
+Customer information card: Name, Email, Phone, Avatar
+Account details: Registration date, Last login, Status
+Edit customer info button
+Statistics cards: Total orders, Total spent, Average order value, Loyalty points
+Order history table
+Wishlist items display
+Saved addresses list
+Subscription details (if subscriber)
+Tags input (for segmentation)
+Internal notes textarea (admin only)
+Activity timeline (orders, reviews, support tickets)
+Send email button
+Delete customer button (GDPR compliant, anonymizes data)
+
+8. SUBSCRIPTION MANAGEMENT
+Subscriptions List Page
+
+Active subscriptions table: Customer, Tier, Price, Next delivery, Status, Actions
+Filters: Tier, Status (Active, Paused, Cancelled), Next delivery date
+Subscription analytics cards:
+
+MRR (Monthly Recurring Revenue)
+Active subscribers count
+Churn rate
+LTV (Average lifetime value)
+Growth rate
+
+
+
+Subscription Tiers Management
+
+Tier cards showing: Name, Price, Description, Active subscribers
+Edit tier button opening modal with:
+
+Tier name
+Monthly price
+Description
+Features list (bullet points)
+Product count range
+Image upload
+Active/Inactive status
+Save button
+
+
+
+Upcoming Deliveries Calendar
+
+Calendar view showing delivery dates
+Click date to see deliveries scheduled
+Bulk actions for selected deliveries
+
+Individual Subscription Management
+
+Customer info
+Subscription tier and price
+Next delivery date
+Delivery address
+Billing information
+Subscription preferences
+Delivery history table
+Actions:
+
+Edit preferences
+Change tier
+Update billing
+Skip next delivery
+Pause subscription
+Cancel subscription
+Refund last payment
+
+
+
+Custom Box Creation
+
+Select customer
+Choose products (search and add)
+Set delivery date
+Add personal note
+Create custom box button
+
+9. INVENTORY MANAGEMENT
+Inventory Dashboard
+
+Stock levels overview: Total products, In stock, Low stock, Out of stock
+Stock value calculation (quantity × cost price)
+Low stock alerts list with action buttons
+
+Stock Adjustment Page
+
+Product selector (search)
+Current stock display
+Adjustment type: Add stock, Reduce stock, Set stock level
+Quantity input
+Reason dropdown (Restock, Damaged, Sold, Theft, Other)
+Notes textarea
+Submit adjustment button
+
+Stock Movement History
+
+Table showing: Date, Product, Type, Quantity, Reason, Admin, Before, After
+Filters: Date range, Product, Type, Admin
+Export to CSV
+
+Stock Forecast
+
+Product selector
+Sales velocity calculation (avg sold per day)
+Days until out of stock
+Recommended reorder quantity
+Reorder point suggestion
+
+Low Stock Alerts Settings
+
+Global low stock threshold input
+Per-product override option
+Email notifications toggle
+Notification recipients (admin emails)
+
+10. DISCOUNTS & PROMOTIONS
+Promo Codes List Page
+
+Promo codes table: Code, Discount, Usage, Valid dates, Status, Actions
+Filters: Status (Active, Expired, Disabled), Discount type
+Add promo code button
+
+Add/Edit Promo Code Form
+
+Code input (auto-generate button)
+Description textarea
+Discount type radio (Percentage, Fixed amount)
+Discount value input
+Minimum order value input
+Maximum discount (for percentage)
+Applicable to:
+
+All products
+Specific products (multi-select)
+Specific categories (multi-select)
+
+
+Conditions:
+
+First order only checkbox
+New customers only checkbox
+
+
+Usage limits:
+
+Total usage limit input
+Per customer limit input
+Current usage count display
+
+
+Valid date range picker (start date, end date)
+Status radio (Active, Disabled)
+Save promo code button
+
+Flash Sales
+
+Create flash sale button
+Sale name input
+Product selection (multi-select or category)
+Discount percentage input
+Start date & time picker
+End date & time picker
+Show countdown timer toggle
+Save flash sale button
+Active flash sales list with edit/delete options
+
+Bundle Deals
+
+Create bundle button
+Bundle name input
+Select products for bundle (min 2)
+Bundle price (discounted from sum of products)
+Bundle image upload
+Status (Active, Inactive)
+Save bundle button
+
+Free Shipping Rules
+
+Minimum order amount input
+Applicable countries multi-select
+Applicable categories (optional)
+Exclude sale items checkbox
+Active toggle
+Save rule button
+
+11. REVIEWS MANAGEMENT
+Reviews List Page
+
+Reviews table: Product, Customer, Rating, Date, Status, Actions
+Filters:
+
+Status (Pending, Approved, Spam)
+Rating (1-5 stars)
+Product
+Date range
+Verified purchase
+
+
+Bulk actions:
+
+Approve selected
+Mark as spam
+Delete selected
+
+
+
+Review Detail Modal
+
+Product name and image
+Customer name and avatar
+Rating stars
+Review title
+Review comment
+Review photos (if uploaded)
+Helpful count
+Verified purchase badge
+Posted date
+Actions:
+
+Approve review
+Reject review
+Mark as spam
+Reply to review (admin response shown on product page)
+Delete review
+
+
+
+Review Analytics
+
+Average rating across all products
+Total reviews count
+Rating distribution chart (5 stars: X%, 4 stars: Y%, etc.)
+Reviews over time line chart
+Products with most reviews
+Products needing reviews (no reviews yet)
+
+Review Request Settings
+
+Auto-send review request toggle
+Days after delivery input (e.g., 7 days)
+Email template editor
+Incentive offer (e.g., "Get 50 points for reviewing")
+
+12. ANALYTICS & REPORTS
+Sales Reports
+
+Date range selector (Today, Yesterday, Last 7 days, Last 30 days, This month, Last month, This year, Custom)
+Total revenue card (with % change vs previous period)
+Total orders card
+Average order value card
+Revenue chart (line/bar chart) with granularity selector (Daily, Weekly, Monthly)
+Sales by product table (sortable by revenue, quantity)
+Sales by category pie chart
+Sales by location map visualization
+Export report button (CSV, PDF)
+
+Product Analytics
+
+Best sellers table (by quantity sold and revenue)
+Worst performers table
+Product performance over time chart
+Views vs purchases conversion rate per product
+Cart abandonment by product
+Stock turnover rate per product
+Low margin products alert
+
+Customer Analytics
+
+New vs returning customers chart
+Customer acquisition cost (if ad spend tracked)
+Customer lifetime value distribution
+Geographic distribution map
+Customer cohort analysis (month-over-month retention)
+RFM analysis table (Recency, Frequency, Monetary segmentation)
+Top customers by total spent
+
+Marketing Analytics
+
+Traffic sources pie chart (Direct, Organic, Social, Referral, Email)
+Conversion funnel visualization (Visits → Product views → Cart → Checkout → Purchase)
+Promo code performance table (Code, Uses, Revenue generated)
+Email campaign stats (if integrated): Open rate, Click rate, Conversion
+Referral program stats (Referrals sent, Conversions, Revenue)
+Abandoned cart rate with list of abandoned carts
+Newsletter subscribers growth chart
+
+Financial Reports
+
+Revenue vs costs chart
+Profit margin per product
+Total revenue
+Total costs (product costs)
+Gross profit
+Tax collected
+Shipping fees collected
+Discounts given
+Refunds issued
+Net profit
+Payment methods breakdown (Card: X%, Apple Pay: Y%)
+Export to PDF for accounting
+
+13. CONTENT MANAGEMENT
+Blog Posts Manager
+
+Posts list table: Title, Author, Category, Status, Published date, Actions
+Filters: Category, Status, Author, Date range
+Add new post button
+
+Add/Edit Blog Post
+
+Title input (required)
+Slug input (auto-generated)
+Excerpt textarea (150 chars)
+Content rich text editor (same as product description)
+Featured image upload
+Author dropdown (staff list)
+Category input (can create new)
+Tags input (multi-tag)
+Related products selector (multi-select)
+Meta title input
+Meta description textarea
+Status radio (Draft, Published)
+Publish date picker (schedule)
+Save post button
+
+Pages Manager
+
+Static pages list: About Us, Contact, FAQ, Policies
+Edit page button opening editor similar to blog posts
+
+FAQ Manager
+
+FAQ categories list
+Continue11:41 pm
+Add category button
+Questions list per category
+Add question button
+Question input
+Answer rich text editor
+Display order input
+Active toggle
+Save FAQ button
+
+Media Library
+
+All uploaded images grid view
+Upload new images button
+Filter by: Upload date, Used in products, Used in blog
+Search by filename
+Image details on click: URL, Size, Dimensions, Alt text, Copy URL button
+Delete image button
+
+Email Templates Editor
+
+Template selector dropdown (Order confirmation, Shipping, Delivery, etc.)
+Subject line input
+Email body HTML editor with variables ({{customer_name}}, {{order_number}}, etc.)
+Preview button
+Send test email button
+Save template button
+
+14. SETTINGS
+General Settings
+
+Store name input
+Tagline input
+Logo upload (recommended size shown)
+Favicon upload
+Contact email input
+Contact phone input
+Currency dropdown (USD, EUR, GBP, etc.)
+Timezone dropdown
+Language dropdown
+Save settings button
+
+Business Information
+
+Legal business name
+Tax ID input
+Registration number
+Business address form
+Operating hours table:
+
+Day dropdown
+Open time picker
+Close time picker
+Closed checkbox
+Add row button
+
+
+Save button
+
+Shipping Settings
+
+Shipping zones:
+
+Add zone button
+Zone name input
+Countries multi-select
+Shipping methods for this zone:
+
+Method name
+Cost input
+Estimated days input
+Add method button
+
+
+
+
+Free shipping threshold input
+Handling time input (days to process order)
+Save shipping settings button
+
+Tax Settings
+
+Tax rate input (percentage)
+Tax included in prices toggle
+Tax exemptions textarea (product IDs or categories)
+Save tax settings button
+
+Payment Settings
+
+Payment mode toggle (Test / Live)
+Stripe publishable key input
+Stripe secret key input (masked)
+Enable payment methods:
+
+Credit/Debit cards checkbox
+Apple Pay checkbox
+Google Pay checkbox
+
+
+Save payment settings button
+
+Email Settings
+
+SMTP host input
+SMTP port input
+SMTP username input
+SMTP password input (masked)
+From email input
+From name input
+Test email connection button
+Automated emails toggles:
+
+Order confirmation
+Shipping notification
+Delivery confirmation
+Review request
+Newsletter
+Abandoned cart
+Welcome email
+
+
+Save email settings button
+
+Notification Settings
+
+Admin notifications (email addresses textarea, one per line)
+Notify on:
+
+New order checkbox
+Low stock checkbox
+New review checkbox
+New customer checkbox
+
+
+Save notification settings button
+
+SEO Settings
+
+Homepage meta title input
+Homepage meta description textarea
+Default OG image upload
+Google Analytics tracking ID input
+Facebook Pixel ID input
+Google Search Console verification code input
+Generate sitemap button
+Robots.txt editor
+Save SEO settings button
+
+Social Media Settings
+
+Instagram username input (for feed integration)
+Facebook page URL
+Twitter handle
+Pinterest URL
+YouTube channel URL
+Social share buttons toggle
+Save social settings button
+
+Advanced Settings
+
+Maintenance mode toggle (shows "Under Maintenance" page to customers)
+Custom CSS textarea (applied site-wide)
+Custom JavaScript textarea (applied site-wide)
+Google Fonts import input
+Backup database button (exports JSON)
+Restore from backup (file upload)
+Export all data button (GDPR compliance)
+Activity logs viewer (table of all admin actions)
+Clear cache button
+Save advanced settings button
+
+15. TEAM & PERMISSIONS
+Staff Accounts List
+
+Staff table: Name, Email, Role, Last login, Status, Actions
+Add staff button
+
+Add/Edit Staff Member
+
+First name input
+Last name input
+Email input
+Role dropdown:
+
+Admin (full access)
+Manager (all except settings)
+Inventory Staff (products, categories, inventory only)
+Support (orders, customers only)
+
+
+Custom permissions (if role = custom):
+
+Module checkboxes: Dashboard, Orders, Products, Categories, Customers, Subscriptions, Inventory, Discounts, Reviews, Analytics, Content, Settings, Team
+Permission level per module: View, Edit, Delete
+
+
+Status toggle (Active, Inactive)
+Two-factor authentication required toggle
+Save staff button
+
+Role Templates
+
+Create role template button
+Template name input
+Permissions configuration (same as custom permissions above)
+Save template button
+
+Activity Log
+
+Table: Date/time, Staff member, Action, Details
+Filters: Staff member, Date range, Action type
+Export log button
+
+
+📁 PROJECT FILE STRUCTURE FOR ANTIGRAVITY
+artisio/
+│
+├── client/                                 # Frontend React Application
+│   ├── public/
+│   │   ├── images/
+│   │   │   ├── logo.svg
+│   │   │   ├── favicon.ico
+│   │   │   └── placeholder.jpg
+│   │   ├── robots.txt
+│   │   └── sitemap.xml
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── fonts/
+│   │   │   ├── icons/
+│   │   │   └── images/
+│   │   │
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   │   ├── Button.jsx
+│   │   │   │   ├── Card.jsx
+│   │   │   │   ├── Input.jsx
+│   │   │   │   ├── Textarea.jsx
+│   │   │   │   ├── Select.jsx
+│   │   │   │   ├── Checkbox.jsx
+│   │   │   │   ├── Radio.jsx
+│   │   │   │   ├── Modal.jsx
+│   │   │   │   ├── Loader.jsx
+│   │   │   │   ├── Skeleton.jsx
+│   │   │   │   ├── Badge.jsx
+│   │   │   │   ├── Alert.jsx
+│   │   │   │   ├── Tooltip.jsx
+│   │   │   │   ├── Pagination.jsx
+│   │   │   │   ├── Breadcrumb.jsx
+│   │   │   │   └── EmptyState.jsx
+│   │   │   │
+│   │   │   ├── layout/
+│   │   │   │   ├── Header.jsx
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── MobileNav.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── AdminLayout.jsx
+│   │   │   │   └── CustomerLayout.jsx
+│   │   │   │
+│   │   │   ├── home/
+│   │   │   │   ├── Hero.jsx
+│   │   │   │   ├── FeaturedProducts.jsx
+│   │   │   │   ├── CategoryShowcase.jsx
+│   │   │   │   ├── ArtisanSpotlight.jsx
+│   │   │   │   ├── Testimonials.jsx
+│   │   │   │   ├── InstagramFeed.jsx
+│   │   │   │   ├── Newsletter.jsx
+│   │   │   │   └── ImpactCounter.jsx
+│   │   │   │
+│   │   │   ├── products/
+│   │   │   │   ├── ProductCard.jsx
+│   │   │   │   ├── ProductGrid.jsx
+│   │   │   │   ├── ProductList.jsx
+│   │   │   │   ├── ProductFilters.jsx
+│   │   │   │   ├── ProductSort.jsx
+│   │   │   │   ├── ProductSearch.jsx
+│   │   │   │   ├── ProductDetail.jsx
+│   │   │   │   ├── ProductGallery.jsx
+│   │   │   │   ├── ProductStory.jsx
+│   │   │   │   ├── ProductTabs.jsx
+│   │   │   │   ├── ProductReviews.jsx
+│   │   │   │   ├── ProductQA.jsx
+│   │   │   │   ├── RelatedProducts.jsx
+│   │   │   │   └── QuickView.jsx
+│   │   │   │
+│   │   │   ├── cart/
+│   │   │   │   ├── CartSidebar.jsx
+│   │   │   │   ├── CartItem.jsx
+│   │   │   │   ├── CartSummary.jsx
+│   │   │   │   ├── CartEmpty.jsx
+│   │   │   │   ├── PromoCodeInput.jsx
+│   │   │   │   └── SuggestedProducts.jsx
+│   │   │   │
+│   │   │   ├── checkout/
+│   │   │   │   ├── CheckoutSteps.jsx
+│   │   │   │   ├── ContactForm.jsx
+│   │   │   │   ├── DeliveryForm.jsx
+│   │   │   │   ├── PaymentForm.jsx
+│   │   │   │   ├── OrderSummary.jsx
+│   │   │   │   └── AddressAutocomplete.jsx
+│   │   │   │
+│   │   │   ├── account/
+│   │   │   │   ├── AccountDashboard.jsx
+│   │   │   │   ├── OrderHistory.jsx
+│   │   │   │   ├── OrderDetail.jsx
+│   │   │   │   ├── SavedAddresses.jsx
+│   │   │   │   ├── PaymentMethods.jsx
+│   │   │   │   ├── Wishlist.jsx
+│   │   │   │   ├── LoyaltyDashboard.jsx
+│   │   │   │   ├── SubscriptionManager.jsx
+│   │   │   │   └── ProfileSettings.jsx
+│   │   │   │
+│   │   │   ├── subscription/
+│   │   │   │   ├── SubscriptionHero.jsx
+│   │   │   │   ├── TierComparison.jsx
+│   │   │   │   ├── HowItWorks.jsx
+│   │   │   │   ├── OnboardingQuiz.jsx
+│   │   │   │   ├── BoxPreview.jsx
+│   │   │   │   └── ProductSwap.jsx
+│   │   │   │
+│   │   │   ├── artisans/
+│   │   │   │   ├── ArtisanGrid.jsx
+│   │   │   │   ├── ArtisanCard.jsx
+│   │   │   │   ├── ArtisanProfile.jsx
+│   │   │   │   ├── ArtisanStory.jsx
+│   │   │   │   └── ArtisanProducts.jsx
+│   │   │   │
+│   │   │   ├── blog/
+│   │   │   │   ├── BlogGrid.jsx
+│   │   │   │   ├── BlogCard.jsx
+│   │   │   │   ├── BlogPost.jsx
+│   │   │   │   ├── BlogSidebar.jsx
+│   │   │   │   └── BlogComments.jsx
+│   │   │   │
+│   │   │   ├── auth/
+│   │   │   │   ├── LoginForm.jsx
+│   │   │   │   ├── RegisterForm.jsx
+│   │   │   │   ├── ForgotPassword.jsx
+│   │   │   │   ├── ResetPassword.jsx
+│   │   │   │   └── SocialLogin.jsx
+│   │   │   │
+│   │   │   └── admin/
+│   │   │       ├── dashboard/
+│   │   │       │   ├── StatsCards.jsx
+│   │   │       │   ├── RevenueChart.jsx
+│   │   │       │   ├── TopProducts.jsx
+│   │   │       │   ├── RecentOrders.jsx
+│   │   │       │   └── LowStockAlerts.jsx
+│   │   │       │
+│   │   │       ├── orders/
+│   │   │       │   ├── OrdersTable.jsx
+│   │   │       │   ├── OrderFilters.jsx
+│   │   │       │   ├── OrderDetail.jsx
+│   │   │       │   ├── OrderTimeline.jsx
+│   │   │       │   └── CreateOrder.jsx
+│   │   │       │
+│   │   │       ├── products/
+│   │   │       │   ├── ProductsTable.jsx
+│   │   │       │   ├── ProductForm.jsx
+│   │   │       │   ├── ProductVariants.jsx
+│   │   │       │   ├── ProductImages.jsx
+│   │   │       │   └── BulkActions.jsx
+│   │   │       │
+│   │   │       ├── categories/
+│   │   │       │   ├── CategoryTree.jsx
+│   │   │       │   ├── CategoryForm.jsx
+│   │   │       │   └── CategoryModal.jsx
+│   │   │       │
+│   │   │       ├── customers/
+│   │   │       │   ├── CustomersTable.jsx
+│   │   │       │   ├── CustomerDetail.jsx
+│   │   │       │   ├── CustomerSegments.jsx
+│   │   │       │   └── CustomerNotes.jsx
+│   │   │       │
+│   │   │       ├── subscriptions/
+│   │   │       │   ├── SubscriptionsTable.jsx
+│   │   │       │   ├── TierManager.jsx
+│   │   │       │   ├── DeliveryCalendar.jsx
+│   │   │       │   └── CustomBoxBuilder.jsx
+│   │   │       │
+│   │   │       ├── inventory/
+│   │   │       │   ├── InventoryDashboard.jsx
+│   │   │       │   ├── StockAdjustment.jsx
+│   │   │       │   ├── StockHistory.jsx
+│   │   │       │   └── StockForecast.jsx
+│   │   │       │
+│   │   │       ├── discounts/
+│   │   │       │   ├── PromoCodesTable.jsx
+│   │   │       │   ├── PromoCodeForm.jsx
+│   │   │       │   ├── FlashSales.jsx
+│   │   │       │   └── BundleDeals.jsx
+│   │   │       │
+│   │   │       ├── reviews/
+│   │   │       │   ├── ReviewsTable.jsx
+│   │   │       │   ├── ReviewDetail.jsx
+│   │   │       │   ├── ReviewAnalytics.jsx
+│   │   │       │   └── ReviewSettings.jsx
+│   │   │       │
+│   │   │       ├── analytics/
+│   │   │       │   ├── SalesReports.jsx
+│   │   │       │   ├── ProductAnalytics.jsx
+│   │   │       │   ├── CustomerAnalytics.jsx
+│   │   │       │   ├── MarketingAnalytics.jsx
+│   │   │       │   └── FinancialReports.jsx
+│   │   │       │
+│   │   │       ├── content/
+│   │   │       │   ├── BlogManager.jsx
+│   │   │       │   ├── BlogEditor.jsx
+│   │   │       │   ├── PageEditor.jsx
+│   │   │       │   ├── FAQManager.jsx
+│   │   │       │   ├── MediaLibrary.jsx
+│   │   │       │   └── EmailTemplates.jsx
+│   │   │       │
+│   │   │       ├── settings/
+│   │   │       │   ├── GeneralSettings.jsx
+│   │   │       │   ├── BusinessInfo.jsx
+│   │   │       │   ├── ShippingSettings.jsx
+│   │   │       │   ├── TaxSettings.jsx
+│   │   │       │   ├── PaymentSettings.jsx
+│   │   │       │   ├── EmailSettings.jsx
+│   │   │       │   ├── SEOSettings.jsx
+│   │   │       │   ├── SocialSettings.jsx
+│   │   │       │   └── AdvancedSettings.jsx
+│   │   │       │
+│   │   │       └── team/
+│   │   │           ├── StaffList.jsx
+│   │   │           ├── StaffForm.jsx
+│   │   │           ├── RoleManager.jsx
+│   │   │           └── ActivityLog.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Products.jsx
+│   │   │   ├── ProductDetail.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── Checkout.jsx
+│   │   │   ├── OrderConfirmation.jsx
+│   │   │   ├── OrderTracking.jsx
+│   │   │   ├── Account.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── ForgotPassword.jsx
+│   │   │   ├── Subscription.jsx
+│   │   │   ├── Artisans.jsx
+│   │   │   ├── ArtisanDetail.jsx
+│   │   │   ├── Blog.jsx
+│   │   │   ├── BlogPost.jsx
+│   │   │   ├── GiftCards.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── FAQ.jsx
+│   │   │   ├── Shipping.jsx
+│   │   │   ├── Returns.jsx
+│   │   │   ├── Privacy.jsx
+│   │   │   ├── Terms.jsx
+│   │   │   ├── NotFound.jsx
+│   │   │   │
+│   │   │   └── admin/
+│   │   │       ├── AdminLogin.jsx
+│   │   │       ├── Dashboard.jsx
+│   │   │       ├── Orders.jsx
+│   │   │       ├── OrderDetail.jsx
+│   │   │       ├── Products.jsx
+│   │   │       ├── AddProduct.jsx
+│   │   │       ├── EditProduct.jsx
+│   │   │       ├── Categories.jsx
+│   │   │       ├── Artisans.jsx
+│   │   │       ├── Customers.jsx
+│   │   │       ├── CustomerDetail.jsx
+│   │   │       ├── Subscriptions.jsx
+│   │   │       ├── Inventory.jsx
+│   │   │       ├── Discounts.jsx
+│   │   │       ├── Reviews.jsx
+│   │   │       ├── Analytics.jsx
+│   │   │       ├── Content.jsx
+│   │   │       ├── Settings.jsx
+│   │   │       └── Team.jsx
+│   │   │
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useCart.js
+│   │   │   ├── useProducts.js
+│   │   │   ├── useOrders.js
+│   │   │   ├── useWishlist.js
+│   │   │   ├── useLocalStorage.js
+│   │   │   ├── useDebounce.js
+│   │   │   ├── useInfiniteScroll.js
+│   │   │   └── useWindowSize.js
+│   │   │
+│   │   ├── context/
+│   │   │   ├── AuthContext.jsx
+│   │   │   ├── CartContext.jsx
+│   │   │   └── ThemeContext.jsx
+│   │   │
+│   │   ├── store/
+│   │   │   ├── authStore.js
+│   │   │   ├── cartStore.js
+│   │   │   ├── productStore.js
+│   │   │   └── adminStore.js
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   ├── productService.js
+│   │   │   ├── orderService.js
+│   │   │   ├── cartService.js
+│   │   │   ├── userService.js
+│   │   │   ├── stripeService.js
+│   │   │   └── cloudinaryService.js
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── validation.js
+│   │   │   ├── helpers.js
+│   │   │   ├── formatters.js
+│   │   │   ├── constants.js
+│   │   │   ├── imageCompression.js
+│   │   │   └── pdfGenerator.js
+│   │   │
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   └── variables.css
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── router.jsx
+│   │
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   └── index.html
+│
+├── server/                                 # Backend Node.js Application
+│   ├── config/
+│   │   ├── db.js
+│   │   ├── cloudinary.js
+│   │   ├── stripe.js
+│   │   └── email.js
+│   │
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Product.js
+│   │   ├── Category.js
+│   │   ├── Brand.js
+│   │   ├── Order.js
+│   │   ├── Subscription.js
+│   │   ├── Review.js
+│   │   ├── Wishlist.js
+│   │   ├── PromoCode.js
+│   │   ├── BlogPost.js
+│   │   ├── StockMovement.js
+│   │   └── Settings.js
+│   │
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── productController.js
+│   │   ├── categoryController.js
+│   │   ├── brandController.js
+│   │   ├── orderController.js
+│   │   ├── subscriptionController.js
+│   │   ├── userController.js
+│   │   ├── reviewController.js
+│   │   ├── wishlistController.js
+│   │   ├── cartController.js
+│   │   ├── promoCodeController.js
+│   │   ├── blogController.js
+│   │   ├── inventoryController.js
+│   │   ├── analyticsController.js
+│   │   ├── settingsController.js
+│   │   ├── uploadController.js
+│   │   └── paymentController.js
+│   │
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── products.js
+│   │   ├── categories.js
+│   │   ├── brands.js
+│   │   ├── orders.js
+│   │   ├── subscriptions.js
+│   │   ├── users.js
+│   │   ├── reviews.js
+│   │   ├── wishlist.js
+│   │   ├── cart.js
+│   │   ├── promoCodes.js
+│   │   ├── blog.js
+│   │   ├── inventory.js
+│   │   ├── analytics.js
+│   │   ├── settings.js
+│   │   ├── upload.js
+│   │   └── payment.js
+│   │
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── adminAuth.js
+│   │   ├── roleCheck.js
+│   │   ├── errorHandler.js
+│   │   ├── validation.js
+│   │   ├── upload.js
+│   │   ├── rateLimit.js
+│   │   └── logger.js
+│   │
+│   ├── utils/
+│   │   ├── email/
+│   │   │   ├── sendEmail.js
+│   │   │   ├── templates/
+│   │   │   │   ├── orderConfirmation.js
+│   │   │   │   ├── shipping.js
+│   │   │   │   ├── delivery.js
+│   │   │   │   ├── reviewRequest.js
+│   │   │   │   ├── welcome.js
+│   │   │   │   └── passwordReset.js
+│   │   │
+│   │   ├── generateToken.js
+│   │   ├── generateSKU.js
+│   │   ├── generateOrderNumber.js
+│   │   ├── validators.js
+│   │   ├── slugify.js
+│   │   ├── imageOptimizer.js
+│   │   └── pdfGenerator.js
+│   │
+│   ├── seeds/
+│   │   ├── categories.json
+│   │   ├── products.json
+│   │   ├── users.json
+│   │   └── seedDatabase.js
+│   │
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── package.json
+│   └── server.js
+│
+├── docs/
+│   ├── API_DOCUMENTATION.md
+│   ├── USER_GUIDE.md
+│   ├── ADMIN_GUIDE.md
+│   ├── DEPLOYMENT.md
+│   ├── CONTRIBUTING.md
+│   └── CHANGELOG.md
+│
+├── .gitignore
+├── README.md
+├── LICENSE
+└── package.json
+
+🎯 ANTIGRAVITY PROMPT TEMPLATE
+When creating this project in Antigravity, use this detailed prompt:
+Create a full-stack MERN e-commerce platform called "ARTISIO" for artisan food and beverage boutiques with the following specifications:
+
+PROJECT TYPE: Full-stack e-commerce platform
+
+TECH STACK:
+- Frontend: React 18, Vite, Tailwind CSS, shadcn/ui, Framer Motion, React Router v6, Zustand, TanStack Query, React Hook Form, Zod
+- Backend: Node.js, Express.js, MongoDB, Mongoose, JWT authentication, bcrypt
+- Payments: Stripe integration
+- File Upload: Cloudinary
+- Email: Nodemailer
+- Deployment: Vercel (frontend), Render.com (backend), MongoDB Atlas (database)
+
+CUSTOMER FEATURES:
+1. Homepage with hero section, featured products grid, category showcase, artisan spotlight, testimonials carousel, Instagram feed, newsletter signup, impact counter
+2. Product catalog with grid/list view, advanced filters (price range, dietary tags, origin, certifications), sorting, search with suggestions, pagination
+3. Product detail page with image gallery, zoom, variants selector, stock indicator, artisan story section, ingredients, nutritional info, reviews, Q&A, gift options
+4. Shopping cart sidebar with quantity controls, promo code, gift card, suggested products, free shipping progress bar
+5. Multi-step checkout with contact form, delivery details (address autocomplete, date/time picker, gift options), Stripe payment
+6. Order confirmation with order number, summary, tracking, invoice download
+7. User account with dashboard, order history, saved addresses, payment methods, wishlist, loyalty program, subscription management, profile settings
+8. Subscription box feature with tier comparison, onboarding quiz, monthly delivery, product swap, pause/cancel options
+9. Artisan profiles with bio, story, products, behind-the-scenes content, social links, tip option
+10. Blog section with posts, categories, search, comments
+11. Gift cards purchase and balance check
+12. Search with real-time suggestions
+13. FAQ, contact form, live chat integration (Tawk.to)
+14. Return/refund request system
+
+ADMIN FEATURES:
+1. Secure admin login with 2FA
+2. Dashboard with revenue metrics, charts, top products, recent orders, low stock alerts
+3. Order management with table, filters, bulk actions, order detail view, status updates, refunds, manual order creation
+4. Product management with table, CRUD operations, image upload, variants, inventory tracking, bulk actions, CSV import/export
+5. Category management with tree view, drag-and-drop ordering
+6. Artisan/brand management with profiles, certifications, sustainability info
+7. Customer management with detail view, segmentation, notes, order history
+8. Subscription management with tiers, delivery calendar, custom boxes, MRR analytics
+9. Inventory dashboard with stock adjustments, movement history, forecasting, low stock alerts
+10. Discounts & promotions with promo codes, flash sales, bundles, free shipping rules
+11. Review management with moderation, replies, analytics
+12. Analytics & reports (sales, product, customer, marketing, financial)
+13. Content management (blog posts, pages, FAQ, media library, email templates)
+14. Settings (general, business, shipping, tax, payment, email, SEO, social, advanced)
+15. Team management with roles, permissions, activity logs
+
+DATABASE COLLECTIONS:
+Users, Products, Categories, Brands, Orders, Subscriptions, Reviews, Wishlists, PromoCodes, BlogPosts, StockMovements, Settings
+
+DESIGN REQUIREMENTS:
+- Color palette: Deep espresso brown (#3E2723) primary, warm amber (#FFA726) secondary, off-white (#FAF9F6) neutral
+- Typography: Playfair Display (headings), Inter (body), Montserrat (accent)
+- Mobile-first responsive design
+- Smooth animations with Framer Motion
+- Loading skeletons
+- Error handling with toast notifications
+- Form validation with Zod
+
+AUTHENTICATION & SECURITY:
+- JWT-based authentication
+- Password hashing with bcrypt
+- Role-based access control (customer, admin, manager, staff)
+- Protected routes
+- CORS configuration
+- Rate limiting
+- Input validation
+
+UNIQUE FEATURES:
+- Artisan story engine for each product
+- Virtual tasting notes with flavor wheel
+- Customer impact dashboard
+- AI-powered subscription personalization
+- Live artisan sessions
+- Gift concierge
+- Carbon-neutral shipping tracker
+
+Create complete, production-ready code with proper error handling, validation, and responsive design. Include all components, pages, routes, API endpoints, database schemas, and utility functions as specified in the file structure above.
+
+✅ FINAL CHECKLIST FOR ANTIGRAVITY
+Core Functionality
+
+ User registration and login with email verification
+ Social login (Google, Facebook)
+ Product browsing with filters and search
+ Add to cart with quantity management
+ Checkout flow with Stripe payment
+ Order confirmation and email
+ User account dashboard
+ Order tracking
+ Wishlist functionality
+ Product reviews and ratings
+ Subscription box system
+ Admin authentication
+ Product CRUD operations
+ Order management
+ Inventory tracking
+ Analytics dashboard
+ Content management
+
+API Endpoints Required
+
+ POST /api/auth/register
+ POST /api/auth/login
+ POST /api/auth/verify-email
+ POST /api/auth/forgot-password
+ POST /api/auth/reset-password
+ GET /api/products
+ GET /api/products/:id
+ POST /api/products (admin)
+[ ]
+Continue11:43 pmPUT /api/products/:id (admin)
+
+ DELETE /api/products/:id (admin)
+ GET /api/categories
+ POST /api/categories (admin)
+ GET /api/cart
+ POST /api/cart
+ PUT /api/cart/:itemId
+ DELETE /api/cart/:itemId
+ POST /api/orders
+ GET /api/orders (user orders)
+ GET /api/orders/:id
+ GET /api/admin/orders (all orders)
+ PUT /api/admin/orders/:id
+ POST /api/payment/create-intent
+ POST /api/payment/confirm
+ GET /api/users/profile
+ PUT /api/users/profile
+ POST /api/reviews
+ GET /api/reviews/:productId
+ POST /api/subscriptions
+ GET /api/subscriptions
+ PUT /api/subscriptions/:id
+ POST /api/upload (image upload)
+ GET /api/analytics/sales (admin)
+ GET /api/analytics/customers (admin)
+
+Pages Required
+Customer Pages:
+
+ / (Home)
+ /products
+ /products/:slug
+ /cart
+ /checkout
+ /order-confirmation/:orderId
+ /track-order
+ /login
+ /register
+ /forgot-password
+ /reset-password/:token
+ /account
+ /account/orders
+ /account/orders/:id
+ /account/addresses
+ /account/wishlist
+ /account/loyalty
+ /account/subscriptions
+ /account/settings
+ /subscription
+ /artisans
+ /artisans/:slug
+ /blog
+ /blog/:slug
+ /gift-cards
+ /about
+ /contact
+ /faq
+ /shipping
+ /returns
+ /privacy
+ /terms
+
+Admin Pages:
+
+ /admin/login
+ /admin/dashboard
+ /admin/orders
+ /admin/orders/:id
+ /admin/products
+ /admin/products/add
+ /admin/products/edit/:id
+ /admin/categories
+ /admin/artisans
+ /admin/customers
+ /admin/customers/:id
+ /admin/subscriptions
+ /admin/inventory
+ /admin/discounts
+ /admin/reviews
+ /admin/analytics
+ /admin/content
+ /admin/settings
+ /admin/team
+
+Environment Variables Required
+Frontend (.env):
+VITE_API_URL=
+VITE_STRIPE_PUBLIC_KEY=
+VITE_CLOUDINARY_CLOUD_NAME=
+VITE_GOOGLE_MAPS_API_KEY=
+VITE_TAWK_TO_PROPERTY_ID=
+Backend (.env):
+NODE_ENV=
+PORT=
+MONGODB_URI=
+JWT_SECRET=
+JWT_EXPIRE=
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+EMAIL_HOST=
+EMAIL_PORT=
+EMAIL_USER=
+EMAIL_PASSWORD=
+EMAIL_FROM=
+FRONTEND_URL=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+FACEBOOK_APP_ID=
+FACEBOOK_APP_SECRET=
+
+📊 PRIORITY LEVELS FOR DEVELOPMENT
+Phase 1: MVP (Weeks 1-3)
+Priority: CRITICAL
+
+User authentication (register, login, logout)
+Product catalog with basic filters
+Product detail page
+Shopping cart
+Basic checkout with Stripe
+Order creation
+Admin login
+Basic product CRUD
+Order management dashboard
+
+Phase 2: Core Features (Weeks 4-5)
+Priority: HIGH
+
+Advanced product filters
+User account dashboard
+Wishlist
+Reviews and ratings
+Email notifications
+Inventory management
+Analytics dashboard
+Image upload to Cloudinary
+
+Phase 3: Enhanced Features (Weeks 6-7)
+Priority: MEDIUM
+
+Subscription system
+Artisan profiles
+Blog section
+Gift cards
+Promo codes
+Advanced analytics
+Live chat integration
+
+Phase 4: Polish & Optimization (Week 8)
+Priority: LOW
+
+Performance optimization
+SEO optimization
+Accessibility improvements
+Mobile responsiveness refinement
+Advanced admin features
+
+
+This comprehensive specification document provides Antigravity with all the information needed to generate a complete, production-ready e-commerce platform with every feature, page, component, and API endpoint clearly defined.Claude is AI and can make mistakes. Please double-check responses.
