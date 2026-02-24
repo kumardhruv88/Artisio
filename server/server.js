@@ -90,8 +90,9 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`
 ╔════════════════════════════════════════════════════════╗
 ║                                                        ║
 ║   🚀 Artisio API Server v2.0                           ║
@@ -108,7 +109,8 @@ app.listen(PORT, () => {
 ║   • GET  /api/reviews      - Reviews & Ratings         ║
 ║                                                        ║
 ╚════════════════════════════════════════════════════════╝
-    `);
-});
+        `);
+    });
+}
 
 export default app;
