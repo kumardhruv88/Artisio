@@ -10,9 +10,7 @@ import {
     Package, Search, RefreshCw,
     Truck, CheckCircle, Clock, ShoppingBag, ArrowRight, ArrowLeft, MapPin, CreditCard
 } from 'lucide-react';
-import axios from 'axios';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import { orderAPI } from '@/services/orderAPI';
 
 const Orders = () => {
     const { user } = useUser();
@@ -36,12 +34,10 @@ const Orders = () => {
                     return;
                 }
 
-                const response = await axios.get(`${API_URL}/api/orders`, {
-                    headers: { Authorization: `Bearer clerkId:${clerkId}` }
-                });
+                const response = await orderAPI.getMyOrders();
 
-                if (response.data.success) {
-                    setOrders(response.data.data || []);
+                if (response.success) {
+                    setOrders(response.data || []);
                 }
             } catch (error) {
                 console.error('Error fetching orders:', error);

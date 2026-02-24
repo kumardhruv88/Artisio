@@ -3,7 +3,9 @@
  * Connects frontend to backend API
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL?.includes('localhost') 
+    ? import.meta.env.VITE_API_URL 
+    : '/api';
 
 /**
  * Fetch all products from the API

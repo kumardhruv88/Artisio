@@ -4,7 +4,9 @@
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = import.meta.env.VITE_API_URL?.includes('localhost') 
+    ? import.meta.env.VITE_API_URL 
+    : '';
 
 const getAuthHeader = () => {
     const clerkId = localStorage.getItem('clerkUserId');
@@ -15,14 +17,14 @@ export const reviewAPI = {
     // Get reviews for a product
     getProductReviews: async (productId, page = 1, limit = 10, sort = '-createdAt') => {
         const response = await axios.get(
-            `${API_URL}/api/reviews/product/${productId}?page=${page}&limit=${limit}&sort=${sort}`
+            `${API_URL}/reviews/product/${productId}?page=${page}&limit=${limit}&sort=${sort}`
         );
         return response.data;
     },
 
     // Get user's reviews
     getUserReviews: async () => {
-        const response = await axios.get(`${API_URL}/api/reviews`, {
+        const response = await axios.get(`${API_URL}/reviews`, {
             headers: getAuthHeader()
         });
         return response.data;
@@ -31,7 +33,7 @@ export const reviewAPI = {
     // Create a review
     createReview: async (productId, rating, title, comment, orderId = null) => {
         const response = await axios.post(
-            `${API_URL}/api/reviews`,
+            `${API_URL}/reviews`,
             { productId, rating, title, comment, orderId },
             { headers: getAuthHeader() }
         );
@@ -41,7 +43,7 @@ export const reviewAPI = {
     // Update a review
     updateReview: async (reviewId, rating, title, comment) => {
         const response = await axios.put(
-            `${API_URL}/api/reviews/${reviewId}`,
+            `${API_URL}/reviews/${reviewId}`,
             { rating, title, comment },
             { headers: getAuthHeader() }
         );
@@ -51,7 +53,7 @@ export const reviewAPI = {
     // Delete a review
     deleteReview: async (reviewId) => {
         const response = await axios.delete(
-            `${API_URL}/api/reviews/${reviewId}`,
+            `${API_URL}/reviews/${reviewId}`,
             { headers: getAuthHeader() }
         );
         return response.data;

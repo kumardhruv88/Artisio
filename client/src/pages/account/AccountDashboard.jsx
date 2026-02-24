@@ -14,9 +14,7 @@ import {
 } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
-import axios from 'axios';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import { orderAPI } from '@/services/orderAPI';
 
 const AccountDashboard = () => {
     const { user } = useUser();
@@ -36,13 +34,11 @@ const AccountDashboard = () => {
                     return;
                 }
 
-                const response = await axios.get(`${API_URL}/api/orders`, {
-                    headers: { Authorization: `Bearer clerkId:${clerkId}` }
-                });
+                const response = await orderAPI.getMyOrders();
 
-                if (response.data.success) {
-                    setOrderCount(response.data.data.length);
-                    setRecentOrders(response.data.data.slice(0, 3));
+                if (response.success) {
+                    setOrderCount(response.data.length);
+                    setRecentOrders(response.data.slice(0, 3));
                 }
             } catch (error) {
                 console.error('Error fetching orders:', error);

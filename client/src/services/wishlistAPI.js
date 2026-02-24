@@ -4,7 +4,9 @@
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = import.meta.env.VITE_API_URL?.includes('localhost') 
+    ? import.meta.env.VITE_API_URL 
+    : '';
 
 const getAuthHeader = () => {
     const clerkId = localStorage.getItem('clerkUserId');
@@ -14,7 +16,7 @@ const getAuthHeader = () => {
 export const wishlistAPI = {
     // Get user's wishlist
     getWishlist: async () => {
-        const response = await axios.get(`${API_URL}/api/wishlist`, {
+        const response = await axios.get(`${API_URL}/wishlist`, {
             headers: getAuthHeader()
         });
         return response.data;
@@ -23,7 +25,7 @@ export const wishlistAPI = {
     // Add product to wishlist
     addToWishlist: async (productId) => {
         const response = await axios.post(
-            `${API_URL}/api/wishlist`,
+            `${API_URL}/wishlist`,
             { productId },
             { headers: getAuthHeader() }
         );
@@ -33,7 +35,7 @@ export const wishlistAPI = {
     // Remove product from wishlist
     removeFromWishlist: async (productId) => {
         const response = await axios.delete(
-            `${API_URL}/api/wishlist/${productId}`,
+            `${API_URL}/wishlist/${productId}`,
             { headers: getAuthHeader() }
         );
         return response.data;
@@ -41,7 +43,7 @@ export const wishlistAPI = {
 
     // Clear entire wishlist
     clearWishlist: async () => {
-        const response = await axios.delete(`${API_URL}/api/wishlist`, {
+        const response = await axios.delete(`${API_URL}/wishlist`, {
             headers: getAuthHeader()
         });
         return response.data;
@@ -50,7 +52,7 @@ export const wishlistAPI = {
     // Check if product is in wishlist
     checkInWishlist: async (productId) => {
         const response = await axios.get(
-            `${API_URL}/api/wishlist/check/${productId}`,
+            `${API_URL}/wishlist/check/${productId}`,
             { headers: getAuthHeader() }
         );
         return response.data;

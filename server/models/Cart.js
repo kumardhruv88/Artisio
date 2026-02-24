@@ -56,40 +56,48 @@ const cartSchema = new mongoose.Schema({
 
 // Calculate all cart totals
 cartSchema.methods.calculateTotals = function () {
-    // Subtotal
-    this.subtotal = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    try {
+        // Safe Subtotal calculation ensuring items have prices
+        this.subtotal = this.items.reduce((sum, item) => {
+            const price = item.price || (item.product && item.product.price) || (item.product && item.product.salePrice) || 0;
+            return sum + (price * (item.quantity || 1));
+        }, 0);
 
-    // Discount
-    if (this.promoCode && this.promoCode.discount) {
-        if (this.promoCode.type === 'percentage') {
-            this.discount = (this.subtotal * this.promoCode.discount) / 100;
+        // Discount
+        if (this.promoCode && this.promoCode.discount) {
+            if (this.promoCode.type === 'percentage') {
+                this.discount = (this.subtotal * this.promoCode.discount) / 100;
+            } else {
+                this.discount = this.promoCode.discount;
+            }
         } else {
-            this.discount = this.promoCode.discount;
+            this.discount = 0;
         }
-    } else {
-        this.discount = 0;
+
+        // Tax (8% - should be configurable based on location)
+        const afterDisountAmt = Math.max(0, this.subtotal - this.discount);
+        this.tax = Math.round(afterDisountAmt * 0.08 * 100) / 100;
+
+        // Shipping (free over $50)
+        this.shipping = afterDisountAmt >= 50 ? 0 : 15;
+        if (this.items.length === 0) this.shipping = 0;
+
+        // Total
+        this.total = Math.round((afterDisountAmt + this.tax + this.shipping) * 100) / 100;
+
+        return {
+            subtotal: this.subtotal,
+            discount: this.discount,
+            tax: this.tax,
+            shipping: this.shipping,
+            total: this.total,
+            freeShippingThreshold: 50,
+            amountToFreeShipping: Math.max(0, 50 - afterDisountAmt)
+        };
+    } catch (e) {
+         console.error('Error calculating totals:', e);
+         return { subtotal: 0, discount: 0, tax: 0, shipping: 0, total: 0 };
     }
-
-    // Tax (8% - should be configurable based on location)
-    const taxableAmount = this.subtotal - this.discount;
-    this.tax = Math.round(taxableAmount * 0.08 * 100) / 100;
-
-    // Shipping (free over $50)
-    const afterDiscount = this.subtotal - this.discount;
-    this.shipping = afterDiscount >= 50 ? 0 : 15;
-
-    // Total
-    this.total = Math.round((this.subtotal - this.discount + this.tax + this.shipping) * 100) / 100;
-
-    return {
-        subtotal: this.subtotal,
-        discount: this.discount,
-        tax: this.tax,
-        shipping: this.shipping,
-        total: this.total,
-        freeShippingThreshold: 50,
-        amountToFreeShipping: Math.max(0, 50 - afterDiscount)
-    };
 };
 
 // Calculate before save

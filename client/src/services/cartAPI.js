@@ -4,7 +4,9 @@
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = import.meta.env.VITE_API_URL?.includes('localhost') 
+    ? import.meta.env.VITE_API_URL 
+    : '';
 
 // Generate or retrieve guest session ID immediately
 const getOrCreateSessionId = () => {
@@ -32,7 +34,7 @@ const getAuthHeader = () => {
 export const cartAPI = {
     // Get cart
     getCart: async () => {
-        const response = await axios.get(`${API_URL}/api/cart`, {
+        const response = await axios.get(`${API_URL}/cart`, {
             headers: getAuthHeader()
         });
         return response.data;
@@ -41,7 +43,7 @@ export const cartAPI = {
     // Add item to cart
     addToCart: async (productId, quantity = 1, variant = null) => {
         const response = await axios.post(
-            `${API_URL}/api/cart`,
+            `${API_URL}/cart`,
             { productId, quantity, variant },
             { headers: getAuthHeader() }
         );
@@ -51,7 +53,7 @@ export const cartAPI = {
     // Update cart item quantity
     updateCartItem: async (itemId, quantity) => {
         const response = await axios.put(
-            `${API_URL}/api/cart/${itemId}`,
+            `${API_URL}/cart/${itemId}`,
             { quantity },
             { headers: getAuthHeader() }
         );
@@ -61,7 +63,7 @@ export const cartAPI = {
     // Remove item from cart
     removeFromCart: async (itemId) => {
         const response = await axios.delete(
-            `${API_URL}/api/cart/${itemId}`,
+            `${API_URL}/cart/${itemId}`,
             { headers: getAuthHeader() }
         );
         return response.data;
@@ -69,7 +71,7 @@ export const cartAPI = {
 
     // Clear cart
     clearCart: async () => {
-        const response = await axios.delete(`${API_URL}/api/cart`, {
+        const response = await axios.delete(`${API_URL}/cart`, {
             headers: getAuthHeader()
         });
         return response.data;
@@ -78,7 +80,7 @@ export const cartAPI = {
     // Apply promo code
     applyPromoCode: async (code) => {
         const response = await axios.post(
-            `${API_URL}/api/cart/promo`,
+            `${API_URL}/cart/promo`,
             { code },
             { headers: getAuthHeader() }
         );
@@ -87,7 +89,7 @@ export const cartAPI = {
 
     // Remove promo code
     removePromoCode: async () => {
-        const response = await axios.delete(`${API_URL}/api/cart/promo`, {
+        const response = await axios.delete(`${API_URL}/cart/promo`, {
             headers: getAuthHeader()
         });
         return response.data;
@@ -96,7 +98,7 @@ export const cartAPI = {
     // Merge guest cart with user cart
     mergeCart: async (sessionId) => {
         const response = await axios.post(
-            `${API_URL}/api/cart/merge`,
+            `${API_URL}/cart/merge`,
             { sessionId },
             { headers: getAuthHeader() }
         );

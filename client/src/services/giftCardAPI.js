@@ -4,7 +4,9 @@
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = import.meta.env.VITE_API_URL?.includes('localhost') 
+    ? import.meta.env.VITE_API_URL 
+    : '';
 
 const getAuthHeader = () => {
     const clerkId = localStorage.getItem('clerkUserId');
@@ -15,7 +17,7 @@ export const giftCardAPI = {
     // Purchase a gift card
     purchase: async (giftCardData) => {
         const response = await axios.post(
-            `${API_URL}/api/gift-cards`,
+            `${API_URL}/gift-cards`,
             giftCardData,
             { headers: getAuthHeader() }
         );
@@ -25,7 +27,7 @@ export const giftCardAPI = {
     // Check gift card balance (public)
     checkBalance: async (code) => {
         const response = await axios.get(
-            `${API_URL}/api/gift-cards/balance/${code}`
+            `${API_URL}/gift-cards/balance/${code}`
         );
         return response.data;
     },
@@ -33,7 +35,7 @@ export const giftCardAPI = {
     // Validate gift card for checkout
     validate: async (code) => {
         const response = await axios.post(
-            `${API_URL}/api/gift-cards/validate`,
+            `${API_URL}/gift-cards/validate`,
             { code },
             { headers: getAuthHeader() }
         );
@@ -43,7 +45,7 @@ export const giftCardAPI = {
     // Redeem gift card on order
     redeem: async (code, amount, orderId, orderNumber) => {
         const response = await axios.post(
-            `${API_URL}/api/gift-cards/redeem`,
+            `${API_URL}/gift-cards/redeem`,
             { code, amount, orderId, orderNumber },
             { headers: getAuthHeader() }
         );
@@ -53,7 +55,7 @@ export const giftCardAPI = {
     // Get user's purchased gift cards
     getMyCards: async () => {
         const response = await axios.get(
-            `${API_URL}/api/gift-cards/my-cards`,
+            `${API_URL}/gift-cards/my-cards`,
             { headers: getAuthHeader() }
         );
         return response.data;

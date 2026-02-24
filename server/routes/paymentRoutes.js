@@ -23,13 +23,13 @@ router.post('/webhook', express.raw({ type: 'application/json' }), handleWebhook
 const authMiddleware = process.env.NODE_ENV === 'production' ? protect : optionalAuth;
 
 // Create payment intent
-router.post('/create-intent', authMiddleware, createPaymentIntent);
+router.post('/create-intent', optionalAuth, createPaymentIntent);
 
 // Create checkout session
-router.post('/checkout', authMiddleware, createCheckoutSession);
+router.post('/checkout', optionalAuth, createCheckoutSession);
 
 // Confirm payment and create order
-router.post('/confirm', authMiddleware, confirmPayment);
+router.post('/confirm', optionalAuth, confirmPayment);
 
 // Get payment intent details
 router.get('/intent/:id', authMiddleware, getPaymentIntent);

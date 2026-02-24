@@ -4,7 +4,9 @@
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = import.meta.env.VITE_API_URL?.includes('localhost') 
+    ? import.meta.env.VITE_API_URL 
+    : '';
 
 const getAuthHeader = () => {
     const clerkId = localStorage.getItem('clerkUserId');
@@ -24,7 +26,7 @@ export const paymentAPI = {
     // Create payment intent
     createPaymentIntent: async (amount, currency = 'usd') => {
         const response = await axios.post(
-            `${API_URL}/api/payment/create-intent`,
+            `${API_URL}/payment/create-intent`,
             { amount, currency },
             { headers: getAuthHeader() }
         );
@@ -34,7 +36,7 @@ export const paymentAPI = {
     // Create checkout session
     createCheckoutSession: async (shippingAddress, cartItems) => {
         const response = await axios.post(
-            `${API_URL}/api/payment/checkout`,
+            `${API_URL}/payment/checkout`,
             { shippingAddress, cartItems },
             { headers: getAuthHeader() }
         );
@@ -44,7 +46,7 @@ export const paymentAPI = {
     // Confirm payment and create order
     confirmPayment: async (paymentIntentId, shippingAddress, items, totals = {}) => {
         const response = await axios.post(
-            `${API_URL}/api/payment/confirm`,
+            `${API_URL}/payment/confirm`,
             { paymentIntentId, shippingAddress, items, totals },
             { headers: getAuthHeader() }
         );
@@ -54,7 +56,7 @@ export const paymentAPI = {
     // Get payment intent details
     getPaymentIntent: async (paymentIntentId) => {
         const response = await axios.get(
-            `${API_URL}/api/payment/intent/${paymentIntentId}`,
+            `${API_URL}/payment/intent/${paymentIntentId}`,
             { headers: getAuthHeader() }
         );
         return response.data;
