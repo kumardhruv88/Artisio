@@ -1,182 +1,201 @@
-# 🎨 ARTISIO - Artisan E-Commerce Platform
-
 <div align="center">
 
-![Artisio Banner](https://img.shields.io/badge/ARTISIO-Handcrafted%20Excellence-8B4513?style=for-the-badge&logo=shopify&logoColor=white)
+<img src="https://img.shields.io/badge/ARTISIO-Handcrafted%20Excellence-8B4513?style=for-the-badge&logoColor=white" alt="Artisio" height="40"/>
 
-**A premium e-commerce platform celebrating handcrafted artistry**
+# Artisio — Artisan E-Commerce Platform
 
-[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb)](https://mongodb.com/)
-[![Stripe](https://img.shields.io/badge/Stripe-Payments-008CDD?style=flat-square&logo=stripe)](https://stripe.com/)
+A full-stack e-commerce platform built to showcase and sell handcrafted artisan products, featuring a premium shopping experience from discovery to delivery.
 
-[Live Demo](#) • [Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-8B4513?style=flat-square)](https://github.com/kumardhruv88/Artisio)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square)](https://github.com/kumardhruv88/Artisio/pulls)
 
 </div>
 
 ---
 
-## 📖 About
+## Overview
 
-**ARTISIO** is a full-stack e-commerce platform designed to showcase and sell handcrafted artisan products. It features a stunning UI with glassmorphism design, smooth animations, and a complete shopping experience from browsing to checkout.
-
----
-
-## ✨ Features
-
-### 🛍️ Customer Features
-- **Product Browsing** - Filter by category, price, artisan
-- **Product Details** - High-quality images, reviews, ratings
-- **Shopping Cart** - Add, remove, update quantities
-- **Wishlist** - Save products for later
-- **Secure Checkout** - Stripe payment integration
-- **Order Tracking** - Track order status in real-time
-- **User Accounts** - Profile management, order history
-- **Email Notifications** - Order confirmation, shipping updates
-
-### 👨‍💼 Admin Features
-- **Dashboard** - Sales analytics, revenue charts
-- **Product Management** - Add, edit, delete products
-- **Order Management** - View and update order status
-- **Inventory Tracking** - Stock level monitoring
-- **Artisan Management** - Manage artisan profiles
-- **Subscription Management** - Handle premium subscriptions
-
-### 🎁 Special Features
-- **Gift Cards** - Purchase and redeem gift cards
-- **Promo Codes** - Apply discount codes at checkout
-- **Subscription Boxes** - Monthly curated artisan boxes
-- **Artisan Spotlight** - Featured artisan profiles
+**Artisio** is a production-ready e-commerce platform designed specifically for artisan creators and their customers. It provides a seamless storefront with advanced product discovery, a fully managed shopping cart and checkout flow via Stripe, real-time order tracking, and a comprehensive admin dashboard with analytics — all wrapped in a glassmorphic, animation-rich UI.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
+
+### Customer Experience
+- **Product Browsing** — Filter and search by category, price, and artisan
+- **Rich Product Pages** — High-quality imagery, detailed descriptions, ratings, and reviews
+- **Shopping Cart** — Add, remove, and update item quantities in real time
+- **Wishlist** — Save products for future purchase
+- **Secure Checkout** — PCI-compliant payments powered by Stripe
+- **Order Tracking** — Real-time order status updates
+- **User Accounts** — Profile management and full order history
+- **Email Notifications** — Automated order confirmations and shipping updates
+
+### Admin Dashboard
+- **Analytics Overview** — Revenue charts, sales metrics, and KPI summaries
+- **Product Management** — Create, edit, and delete product listings
+- **Order Management** — View orders and update fulfillment status
+- **Inventory Tracking** — Monitor and manage stock levels
+- **Artisan Management** — Curate and manage artisan profiles
+- **Subscription Management** — Administer premium subscription plans
+
+### Platform Extras
+- **Gift Cards** — Issue and redeem gift cards at checkout
+- **Promo Codes** — Apply discount codes with configurable rules
+- **Subscription Boxes** — Monthly curated artisan product boxes
+- **Artisan Spotlight** — Dedicated feature pages for artisan profiles
+
+---
+
+## Tech Stack
 
 ### Frontend
-| Technology | Purpose |
-|------------|---------|
-| React 18 | UI Library |
-| Vite | Build Tool |
-| TailwindCSS | Styling |
-| Framer Motion | Animations |
-| GSAP | Advanced Animations |
-| React Router | Navigation |
-| Zustand | State Management |
-| React Query | Data Fetching |
-| Clerk | Authentication |
+
+| Technology | Badge | Purpose |
+|---|---|---|
+| React 18 | ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) | UI library |
+| Vite | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Build tool & dev server |
+| Tailwind CSS | ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white) | Utility-first styling |
+| Framer Motion | ![Framer](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) | UI animations |
+| GSAP | ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=white) | Advanced animations |
+| React Router | ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white) | Client-side routing |
+| Zustand | ![Zustand](https://img.shields.io/badge/Zustand-000000?style=flat-square&logo=react&logoColor=white) | Lightweight state management |
+| React Query | ![React Query](https://img.shields.io/badge/React_Query-FF4154?style=flat-square&logo=react-query&logoColor=white) | Server state & data fetching |
+| Clerk | ![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=flat-square&logo=clerk&logoColor=white) | Authentication & user management |
 
 ### Backend
-| Technology | Purpose |
-|------------|---------|
-| Node.js | Runtime |
-| Express.js | Web Framework |
-| MongoDB | Database |
-| Mongoose | ODM |
-| JWT | Auth Tokens |
-| Stripe | Payments |
-| Cloudinary | Image Storage |
-| Nodemailer | Email Service |
+
+| Technology | Badge | Purpose |
+|---|---|---|
+| Node.js | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white) | JavaScript runtime |
+| Express.js | ![Express](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white) | Web framework |
+| MongoDB | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) | NoSQL database |
+| Mongoose | ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white) | MongoDB ODM |
+| JWT | ![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=json-web-tokens&logoColor=white) | Stateless authentication |
+| Stripe | ![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=flat-square&logo=stripe&logoColor=white) | Payment processing |
+| Cloudinary | ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white) | Cloud image storage |
+| Nodemailer | ![Nodemailer](https://img.shields.io/badge/Nodemailer-22B573?style=flat-square&logo=gmail&logoColor=white) | Transactional email |
+
+### Infrastructure & Deployment
+
+| Service | Badge | Platform |
+|---|---|---|
+| Frontend | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) | Vercel |
+| Backend | ![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white) | Railway |
+| Database | ![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white) | MongoDB Atlas |
+| Images | ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white) | Cloudinary |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 artisio/
-├── client/                 # Frontend React Application
+├── client/                         # React frontend application
 │   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Page components
-│   │   │   ├── admin/      # Admin dashboard pages
-│   │   │   └── account/    # User account pages
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API service functions
-│   │   └── config/         # Configuration files
+│   │   ├── components/             # Reusable UI components
+│   │   ├── pages/                  # Route-level page components
+│   │   │   ├── admin/              # Admin dashboard views
+│   │   │   └── account/            # User account views
+│   │   ├── context/                # React context providers
+│   │   ├── hooks/                  # Custom React hooks
+│   │   ├── services/               # API service layer
+│   │   └── config/                 # App-level configuration
 │   └── package.json
 │
-├── server/                 # Backend Node.js Application
-│   ├── config/             # Database & app config
-│   ├── controllers/        # Route controllers
-│   ├── middleware/         # Custom middleware
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── utils/              # Helper functions
-│   ├── seeds/              # Database seeders
-│   └── server.js           # Entry point
+├── server/                         # Node.js backend application
+│   ├── config/                     # Database & environment config
+│   ├── controllers/                # Business logic & route handlers
+│   ├── middleware/                 # Custom Express middleware
+│   ├── models/                     # Mongoose data models
+│   ├── routes/                     # API route definitions
+│   ├── utils/                      # Shared utility functions
+│   ├── seeds/                      # Database seed scripts
+│   └── server.js                   # Application entry point
 │
-└── scraper/                # Product data scraper
+└── scraper/                        # Product data scraping utilities
 ```
 
 ---
 
-## 🚀 Installation
+## Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- MongoDB Atlas account
-- Stripe account
-- Clerk account
-- Cloudinary account
 
-### 1. Clone the Repository
+Ensure the following are installed and configured before proceeding:
+
+- [Node.js](https://nodejs.org/) v18 or higher
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account
+- [Stripe](https://stripe.com/) account
+- [Clerk](https://clerk.dev/) account
+- [Cloudinary](https://cloudinary.com/) account
+
+### Installation
+
+**1. Clone the repository**
+
 ```bash
 git clone https://github.com/kumardhruv88/Artisio.git
 cd Artisio
 ```
 
-### 2. Setup Backend
+**2. Configure and start the backend**
+
 ```bash
 cd server
 npm install
-
-# Create .env file (copy from .env.example)
-cp .env.example .env
-# Fill in your environment variables
-
+cp .env.example .env   # Add your environment variables
 npm run dev
 ```
 
-### 3. Setup Frontend
+**3. Configure and start the frontend**
+
 ```bash
 cd client
 npm install
-
-# Create .env file (copy from .env.example)
-cp .env.example .env
-# Fill in your environment variables
-
+cp .env.example .env   # Add your environment variables
 npm run dev
 ```
 
-### 4. Access the Application
-- Frontend: `http://localhost:3002`
-- Backend API: `http://localhost:5000`
+**4. Access the application**
+
+| Service | URL |
+|---|---|
+| Frontend | `http://localhost:3002` |
+| Backend API | `http://localhost:5000` |
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
-### Backend (`server/.env`)
+### Backend — `server/.env`
+
 ```env
 NODE_ENV=development
 PORT=5000
 MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 FRONTEND_URL=http://localhost:3002
+
+# Email
 EMAIL_HOST=smtp.gmail.com
 EMAIL_PORT=587
 EMAIL_USER=your_email
 EMAIL_PASSWORD=your_app_password
+
+# Cloudinary
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
+
+# Stripe
 STRIPE_SECRET_KEY=your_stripe_secret
 STRIPE_PUBLISHABLE_KEY=your_stripe_publishable
 ```
 
-### Frontend (`client/.env`)
+### Frontend — `client/.env`
+
 ```env
 VITE_API_URL=http://localhost:5000
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
@@ -185,99 +204,81 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_key
 
 ---
 
-## 📡 API Endpoints
+## API Reference
 
 ### Products
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/products` | Get all products |
-| GET | `/api/products/:id` | Get single product |
-| POST | `/api/products` | Create product (Admin) |
-| PUT | `/api/products/:id` | Update product (Admin) |
-| DELETE | `/api/products/:id` | Delete product (Admin) |
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| `GET` | `/api/products` | — | Retrieve all products |
+| `GET` | `/api/products/:id` | — | Retrieve a single product |
+| `POST` | `/api/products` | Admin | Create a new product |
+| `PUT` | `/api/products/:id` | Admin | Update an existing product |
+| `DELETE` | `/api/products/:id` | Admin | Delete a product |
 
 ### Users
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/users/me` | Get current user |
-| PUT | `/api/users/profile` | Update profile |
-| GET | `/api/users/orders` | Get user orders |
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| `GET` | `/api/users/me` | User | Get the authenticated user |
+| `PUT` | `/api/users/profile` | User | Update user profile |
+| `GET` | `/api/users/orders` | User | Get user's order history |
 
 ### Orders
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/orders` | Create order |
-| GET | `/api/orders/:id` | Get order details |
-| GET | `/api/orders/track/:id` | Track order |
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| `POST` | `/api/orders` | User | Place a new order |
+| `GET` | `/api/orders/:id` | User | Get order details |
+| `GET` | `/api/orders/track/:id` | User | Track an order |
 
 ### Cart & Wishlist
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/cart` | Get cart |
-| POST | `/api/cart/add` | Add to cart |
-| GET | `/api/wishlist` | Get wishlist |
-| POST | `/api/wishlist/add` | Add to wishlist |
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| `GET` | `/api/cart` | User | Retrieve cart contents |
+| `POST` | `/api/cart/add` | User | Add item to cart |
+| `GET` | `/api/wishlist` | User | Retrieve wishlist |
+| `POST` | `/api/wishlist/add` | User | Add item to wishlist |
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
-
-| Service | Platform |
-|---------|----------|
-| Backend | Railway |
-| Frontend | Vercel |
-| Database | MongoDB Atlas |
-| Images | Cloudinary |
+For step-by-step deployment instructions, refer to [DEPLOYMENT.md](./DEPLOYMENT.md).
 
 ---
 
-## 📸 Screenshots
+## Contributing
 
-<details>
-<summary>Click to view screenshots</summary>
+Contributions are welcome and appreciated. To get started:
 
-### Home Page
-*Beautiful hero section with featured products*
+1. Fork the repository
+2. Create a feature branch — `git checkout -b feature/your-feature`
+3. Commit your changes — `git commit -m 'feat: add your feature'`
+4. Push to your branch — `git push origin feature/your-feature`
+5. Open a Pull Request
 
-### Product Listing
-*Filterable product grid with smooth animations*
-
-### Product Details
-*Detailed product view with reviews*
-
-### Shopping Cart
-*Clean cart interface with promo codes*
-
-### Admin Dashboard
-*Comprehensive admin panel with analytics*
-
-</details>
+Please ensure your code follows the existing conventions and includes relevant documentation where applicable.
 
 ---
 
-## 🤝 Contributing
+## License
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Dhruv Kumar**
-- GitHub: [@kumardhruv88](https://github.com/kumardhruv88)
+
+[![GitHub](https://img.shields.io/badge/GitHub-@kumardhruv88-181717?style=flat-square&logo=github)](https://github.com/kumardhruv88)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ and lots of ☕**
+*Built with care for the craft.*
 
 </div>
