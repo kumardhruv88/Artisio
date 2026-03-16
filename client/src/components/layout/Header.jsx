@@ -3,8 +3,8 @@
  * Lumière-inspired thin elegant typography + hamburger on left
  */
 
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Menu, X, Search, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
@@ -19,6 +19,10 @@ const Header = () => {
     const { wishlistCount } = useWishlist();
     const { itemCount: cartItemsCount } = useCart();
     const location = useLocation();
+    const navigate = useNavigate();
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [headerSearch, setHeaderSearch] = useState('');
+    const searchInputRef = useRef(null);
 
     const navigation = [
         { name: 'ABOUT', href: '/about' },
@@ -49,6 +53,31 @@ const Header = () => {
     }, [lastScrollY]);
 
     useEffect(() => setIsMenuOpen(false), [location]);
+    useEffect(() => setIsSearchOpen(false), [location]);
+
+    useEffect(() => {
+        if (isSearchOpen && searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, [isSearchOpen]);
+
+    useEffect(() => {
+        const handleKey = (e) => {
+            if (e.key === 'Escape') setIsSearchOpen(false);
+        };
+        window.addEventListener('keydown', handleKey);
+        return () => window.removeEventListener('keydown', handleKey);
+    }, []);
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        const q = headerSearch.trim();
+        if (q) {
+            navigate(`/products?q=${encodeURIComponent(q)}`);
+            setIsSearchOpen(false);
+            setHeaderSearch('');
+        }
+    };
 
     useEffect(() => {
         document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
@@ -126,7 +155,11 @@ const Header = () => {
                         {/* Right: Actions */}
                         <div className="flex items-center gap-3">
                             {/* Search */}
-                            <button className="p-2 text-[#c5c0b8] hover:text-[#D4AF37] transition-colors">
+                            <button
+                                onClick={() => setIsSearchOpen(true)}
+                                className="p-2 text-[#c5c0b8] hover:text-[#D4AF37] transition-colors"
+                                aria-label="Search"
+                            >
                                 <Search className="w-4 h-4" strokeWidth={1.5} />
                             </button>
 
@@ -302,6 +335,78 @@ const Header = () => {
                     </>
                 )}
             </AnimatePresence >
+
+            {/* Search Overlay */}
+            <AnimatePresence>
+                {isSearchOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                        className="fixed top-0 left-0 right-0 z-[200] bg-[#1e3939] px-4 lg:px-8 py-4 shadow-2xl"
+                    >
+                        <form onSubmit={handleSearchSubmit} className="max-w-2xl mx-auto flex items-center gap-3">
+                            <Search className="w-5 h-5 text-[#D4AF37] shrink-0" strokeWidth={1.5} />
+                            <input
+                                ref={searchInputRef}
+                                type="text"
+                                value={headerSearch}
+                                onChange={(e) => setHeaderSearch(e.target.value)}
+                                placeholder="Search for coffee, chocolate, honey..."
+                                className="flex-1 bg-transparent text-[#e8e4dc] placeholder-[#7a7670] outline-none py-2"
+                                style={{
+                                    fontFamily: "'Inter', sans-serif",
+                                    fontSize: '15px',
+                                    fontWeight: 300,
+                                    letterSpacing: '0.03em',
+                                }}
+                            />
+                            {headerSearch && (
+                                <button
+                                    type="button"
+                                    onClick={() => setHeaderSearch('')}
+                                    className="text-[#7a7670] hover:text-[#e8e4dc] transition-colors"
+                                >
+                                    <X className="w-4 h-4" strokeWidth={1.5} />
+                                </button>
+                            )}
+                            <button
+                                type="submit"
+                                className="px-4 py-1.5 bg-[#D4AF37] text-[#1e3939] text-xs font-semibold tracking-widest hover:bg-[#c9a430] transition-colors"
+                                style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '0.12em' }}
+                            >
+                                SEARCH
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => { setIsSearchOpen(false); setHeaderSearch(''); }}
+                                className="p-1 text-[#7a7670] hover:text-[#e8e4dc] transition-colors"
+                            >
+                                <X className="w-5 h-5" strokeWidth={1.5} />
+                            </button>
+                        </form>
+                        {/* Quick suggestions */}
+                        <div className="max-w-2xl mx-auto mt-3 flex flex-wrap gap-2 pl-8">
+                            {['Artisan Coffee', 'Dark Chocolate', 'Organic Honey', 'Artisan Tea', 'Gift Sets'].map((s) => (
+                                <button
+                                    key={s}
+                                    type="button"
+                                    onClick={() => {
+                                        navigate(`/products?q=${encodeURIComponent(s)}`);
+                                        setIsSearchOpen(false);
+                                        setHeaderSearch('');
+                                    }}
+                                    className="px-3 py-1 text-[10px] text-[#c5c0b8] border border-white/10 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors"
+                                    style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '0.1em' }}
+                                >
+                                    {s}
+                                </button>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 };

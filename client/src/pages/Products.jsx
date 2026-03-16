@@ -1,7 +1,7 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Search, ChevronDown, Grid3X3, LayoutGrid, Star, ShoppingBag, X, Heart, TrendingUp, Loader2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { fetchProducts, API_CATEGORIES } from '../services/api';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
@@ -23,6 +23,19 @@ const Products = () => {
     const [showMobileFilters, setShowMobileFilters] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [isSearchFocused, setIsSearchFocused] = useState(false);
+    const [searchParams] = useSearchParams();
+
+    // Sync URL ?q= param into searchQuery and scroll to results
+    useEffect(() => {
+        const q = searchParams.get('q');
+        if (q) {
+            setSearchQuery(q);
+            // Small delay to let the page render, then scroll to shop section
+            setTimeout(() => {
+                shopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+    }, [searchParams]);
 
     // Use global context instead of local state
     const { isInWishlist, toggleWishlist } = useWishlist();
